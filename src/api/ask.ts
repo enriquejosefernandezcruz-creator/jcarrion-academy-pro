@@ -1,4 +1,6 @@
 // FILE: src/api/ask.ts
+import { getStoredToken } from "../components/AccessGate";
+
 export type AskRoute = "manual" | "gasolineras" | "ambigua";
 
 export type AskResponse = {
@@ -13,7 +15,7 @@ type AskError = {
   details?: unknown;
 };
 
-function envOrThrow(key: "VITE_API_URL" | "VITE_APP_TOKEN"): string {
+function envOrThrow(key: "VITE_API_URL"): string {
   const v = (import.meta as any).env?.[key] as string | undefined;
   if (!v || !String(v).trim()) throw new Error(`Falta variable de entorno: ${key}`);
   return String(v).trim();
@@ -40,7 +42,13 @@ export async function ask(question: string): Promise<AskResponse> {
   if (!q) throw new Error("La pregunta está vacía.");
 
   const url = envOrThrow("VITE_API_URL");
-  const token = envOrThrow("VITE_APP_TOKEN");
+
+  // Token por usuario (login en frontend)
+  const token = getStoredToken();
+  if (!token) {
+    const err: AskError = { message: "No hay token de acceso. Inicia sesión." };
+    throw err;
+  }
 
   let res: Response;
   try {
@@ -85,3 +93,4 @@ export async function ask(question: string): Promise<AskResponse> {
     hits: Array.isArray(data.hits) ? data.hits : undefined,
   };
 }
+

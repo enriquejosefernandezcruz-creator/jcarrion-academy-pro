@@ -3,6 +3,8 @@
 // ==============================
 import { useCallback, useMemo, useRef, useState } from "react";
 
+import AccessGate from "./components/AccessGate";
+
 import { detectLangInfo } from "./rag/lang";
 import { ask, type AskResponse } from "./api/ask";
 
@@ -189,410 +191,413 @@ export default function App() {
   }, [qa?.answer]);
 
   return (
-    <div
-      style={{
-        backgroundColor: "#0a0a0c",
-        minHeight: "100vh",
-        color: "#e4e4e7",
-        fontFamily: "sans-serif",
-      }}
-    >
-      {/* HEADER */}
-      <header
+    <AccessGate>
+      <div
         style={{
-          padding: "1rem 2rem",
-          background: "#18181b",
-          borderBottom: "1px solid #27272a",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
+          backgroundColor: "#0a0a0c",
+          minHeight: "100vh",
+          color: "#e4e4e7",
+          fontFamily: "sans-serif",
         }}
       >
-        <h1 style={{ fontSize: "1.25rem", fontWeight: "bold", margin: 0 }}>
-          JCARRION <span style={{ color: "#3b82f6" }}>ACADEMY</span>
-        </h1>
+        {/* HEADER */}
+        <header
+          style={{
+            padding: "1rem 2rem",
+            background: "#18181b",
+            borderBottom: "1px solid #27272a",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            position: "sticky",
+            top: 0,
+            zIndex: 100,
+          }}
+        >
+          <h1 style={{ fontSize: "1.25rem", fontWeight: "bold", margin: 0 }}>
+            JCARRION <span style={{ color: "#3b82f6" }}>ACADEMY</span>
+          </h1>
 
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <button
-            onClick={() => setSeccion("manual")}
-            style={{
-              padding: "8px 16px",
-              borderRadius: "6px",
-              background: seccion === "manual" ? "#2563eb" : "transparent",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              transition: "0.2s",
-            }}
-          >
-            Manual
-          </button>
-
-          <button
-            onClick={() => setSeccion("recursos")}
-            style={{
-              padding: "8px 16px",
-              borderRadius: "6px",
-              background: seccion === "recursos" ? "#2563eb" : "transparent",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              transition: "0.2s",
-            }}
-          >
-            Gasolineras
-          </button>
-        </div>
-      </header>
-
-      <main style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        {/* BUSCADOR Y FILTROS */}
-        <div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <input
-              type="text"
-              placeholder={
-                seccion === "manual" ? "Buscar normativa..." : "Buscar por país, estación o instrucción..."
-              }
-              value={busqueda}
-              onChange={(e) => {
-                setBusqueda(e.target.value);
-                setIdx(0);
-              }}
+            <button
+              onClick={() => setSeccion("manual")}
               style={{
-                flex: 1,
-                padding: "12px",
-                borderRadius: "8px",
-                background: "#18181b",
-                border: "1px solid #27272a",
+                padding: "8px 16px",
+                borderRadius: "6px",
+                background: seccion === "manual" ? "#2563eb" : "transparent",
                 color: "white",
-                outline: "none",
-              }}
-            />
-          </div>
-
-          {/* Botones de País (Solo en Recursos) */}
-          {seccion === "recursos" && (
-            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-              {paisesDisponibles.map((p) => (
-                <button
-                  key={p}
-                  onClick={() => setFiltroPais(p)}
-                  style={{
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "0.8rem",
-                    border: "1px solid #27272a",
-                    background: filtroPais === p ? "#3b82f6" : "#18181b",
-                    color: "white",
-                    cursor: "pointer",
-                    transition: "0.2s",
-                  }}
-                >
-                  {p}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {seccion === "manual" ? (
-          <>
-            {/* PANEL IA: Pregunta */}
-            <section
-              style={{
-                background: "#18181b",
-                padding: "1rem",
-                borderRadius: 12,
-                border: "1px solid #27272a",
-                marginBottom: "1rem",
+                border: "none",
+                cursor: "pointer",
+                transition: "0.2s",
               }}
             >
-              <h3 style={{ marginTop: 0, marginBottom: 10 }}>Pregunta</h3>
+              Manual
+            </button>
 
-              <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                <div style={{ flex: 1 }}>
-                  <QuestionInput
-                    value={q}
-                    onChange={setQ}
-                    onSubmit={handleAsk}
-                    placeholder="Ej: ¿Qué documentos necesito antes de iniciar el viaje? / ¿Dónde puedo repostar en Francia?"
-                    disabled={loadingQA}
+            <button
+              onClick={() => setSeccion("recursos")}
+              style={{
+                padding: "8px 16px",
+                borderRadius: "6px",
+                background: seccion === "recursos" ? "#2563eb" : "transparent",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                transition: "0.2s",
+              }}
+            >
+              Gasolineras
+            </button>
+          </div>
+        </header>
+
+        <main style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
+          {/* BUSCADOR Y FILTROS */}
+          <div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ display: "flex", gap: "1rem" }}>
+              <input
+                type="text"
+                placeholder={
+                  seccion === "manual" ? "Buscar normativa..." : "Buscar por país, estación o instrucción..."
+                }
+                value={busqueda}
+                onChange={(e) => {
+                  setBusqueda(e.target.value);
+                  setIdx(0);
+                }}
+                style={{
+                  flex: 1,
+                  padding: "12px",
+                  borderRadius: "8px",
+                  background: "#18181b",
+                  border: "1px solid #27272a",
+                  color: "white",
+                  outline: "none",
+                }}
+              />
+            </div>
+
+            {/* Botones de País (Solo en Recursos) */}
+            {seccion === "recursos" && (
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                {paisesDisponibles.map((p) => (
+                  <button
+                    key={p}
+                    onClick={() => setFiltroPais(p)}
+                    style={{
+                      padding: "6px 12px",
+                      borderRadius: "20px",
+                      fontSize: "0.8rem",
+                      border: "1px solid #27272a",
+                      background: filtroPais === p ? "#3b82f6" : "#18181b",
+                      color: "white",
+                      cursor: "pointer",
+                      transition: "0.2s",
+                    }}
+                  >
+                    {p}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {seccion === "manual" ? (
+            <>
+              {/* PANEL IA: Pregunta */}
+              <section
+                style={{
+                  background: "#18181b",
+                  padding: "1rem",
+                  borderRadius: 12,
+                  border: "1px solid #27272a",
+                  marginBottom: "1rem",
+                }}
+              >
+                <h3 style={{ marginTop: 0, marginBottom: 10 }}>Pregunta</h3>
+
+                <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <div style={{ flex: 1 }}>
+                    <QuestionInput
+                      value={q}
+                      onChange={setQ}
+                      onSubmit={handleAsk}
+                      placeholder="Ej: ¿Qué documentos necesito antes de iniciar el viaje? / ¿Dónde puedo repostar en Francia?"
+                      disabled={loadingQA}
+                    />
+                  </div>
+
+                  <button
+                    disabled={!q.trim() || loadingQA}
+                    onClick={handleAsk}
+                    style={{
+                      padding: "12px 16px",
+                      borderRadius: 8,
+                      border: "none",
+                      background: "#2563eb",
+                      color: "white",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      height: 48,
+                    }}
+                  >
+                    {loadingQA ? "..." : "Preguntar"}
+                  </button>
+                </div>
+
+                {/* UX mínima obligatoria */}
+                <div ref={answerRef}>
+                  {loadingQA && (
+                    <div style={{ marginTop: 12, fontSize: "0.9rem", color: "#a1a1aa" }}>
+                      Procesando…
+                    </div>
+                  )}
+
+                  {qaError && (
+                    <div
+                      style={{
+                        marginTop: 12,
+                        color: "#e4e4e7",
+                        background: "#0a0a0c",
+                        padding: 12,
+                        borderRadius: 8,
+                        border: "1px solid #ef4444",
+                      }}
+                    >
+                      {qaError}
+                    </div>
+                  )}
+
+                  {qa && (
+                    <div
+                      style={{
+                        marginTop: 12,
+                        color: "#e4e4e7",
+                        background: "#0a0a0c",
+                        padding: 12,
+                        borderRadius: 8,
+                        border: "1px solid #27272a",
+                      }}
+                    >
+                      <AnswerPanel lang={qLang} answer={qa.answer} />
+
+                      {/* Referencias UI (solo si la respuesta NO trae ya su propio bloque de referencias) */}
+                      {formattedRefs.length > 0 && !answerHasRefs && (
+                        <div style={{ marginTop: 12, borderTop: "1px solid #27272a", paddingTop: 10 }}>
+                          <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: 6 }}>
+                            Referencias
+                          </div>
+                          <ul style={{ margin: 0, paddingLeft: 18, color: "#a1a1aa", fontSize: "0.9rem" }}>
+                            {formattedRefs.map((r) => (
+                              <li key={r.key}>{r.label}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </section>
+
+              {/* VISTA MANUAL */}
+              <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: "2rem" }}>
+                <aside
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem",
+                    maxHeight: "70vh",
+                    overflowY: "auto",
+                    paddingRight: "10px",
+                  }}
+                >
+                  {filteredManual.map((m, i) => (
+                    <button
+                      key={m.id}
+                      onClick={() => setIdx(i)}
+                      style={{
+                        textAlign: "left",
+                        padding: "12px",
+                        borderRadius: "6px",
+                        background: idx === i ? "#2563eb" : "#18181b",
+                        color: "white",
+                        border: "1px solid #27272a",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {m.id}. {m.titulo}
+                    </button>
+                  ))}
+                </aside>
+
+                <article
+                  style={{
+                    background: "#18181b",
+                    padding: "2.5rem",
+                    borderRadius: "12px",
+                    border: "1px solid #27272a",
+                  }}
+                >
+                  <h2 style={{ color: "#3b82f6", marginBottom: "1.5rem" }}>{mActual.titulo}</h2>
+
+                  {mActual.secciones.map((s, i) => (
+                    <div key={i} style={{ marginBottom: "2rem" }}>
+                      <h3 style={{ fontSize: "1.2rem", color: "#f4f4f5" }}>{s.t}</h3>
+                      {s.p.map((p, pi) => (
+                        <p key={pi} style={{ color: "#a1a1aa", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                          • {p}
+                        </p>
+                      ))}
+                    </div>
+                  ))}
+                </article>
+              </div>
+            </>
+          ) : (
+            /* VISTA RECURSOS (GASOLINERAS) */
+            <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+              {/* QR CENTRALIZADO */}
+              <section
+                style={{
+                  display: "flex",
+                  background: "#18181b",
+                  padding: "2rem",
+                  borderRadius: "16px",
+                  border: "1px solid #3b82f6",
+                  alignItems: "center",
+                  gap: "2rem",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ background: "white", padding: "10px", borderRadius: "8px" }}>
+                  <img
+                    src={qrMapa}
+                    alt="QR Mapa"
+                    style={{ width: "160px", height: "160px", objectFit: "contain" }}
                   />
                 </div>
 
-                <button
-                  disabled={!q.trim() || loadingQA}
-                  onClick={handleAsk}
-                  style={{
-                    padding: "12px 16px",
-                    borderRadius: 8,
-                    border: "none",
-                    background: "#2563eb",
-                    color: "white",
-                    cursor: "pointer",
-                    fontWeight: "bold",
-                    height: 48,
-                  }}
-                >
-                  {loadingQA ? "..." : "Preguntar"}
-                </button>
-              </div>
+                <div style={{ maxWidth: "400px", textAlign: "left" }}>
+                  <h2 style={{ margin: "0 0 10px 0" }}>Mapa Autorizado</h2>
+                  <p style={{ color: "#a1a1aa", fontSize: "0.9rem", marginBottom: "20px" }}>
+                    Utiliza este código para acceder a la ubicación de todas las estaciones o comparte el enlace con los
+                    conductores.
+                  </p>
 
-              {/* UX mínima obligatoria */}
-              <div ref={answerRef}>
-                {loadingQA && (
-                  <div style={{ marginTop: 12, fontSize: "0.9rem", color: "#a1a1aa" }}>
-                    Procesando…
-                  </div>
-                )}
-
-                {qaError && (
-                  <div
-                    style={{
-                      marginTop: 12,
-                      color: "#e4e4e7",
-                      background: "#0a0a0c",
-                      padding: 12,
-                      borderRadius: 8,
-                      border: "1px solid #ef4444",
-                    }}
-                  >
-                    {qaError}
-                  </div>
-                )}
-
-                {qa && (
-                  <div
-                    style={{
-                      marginTop: 12,
-                      color: "#e4e4e7",
-                      background: "#0a0a0c",
-                      padding: 12,
-                      borderRadius: 8,
-                      border: "1px solid #27272a",
-                    }}
-                  >
-                    <AnswerPanel lang={qLang} answer={qa.answer} />
-
-                    {/* Referencias UI (solo si la respuesta NO trae ya su propio bloque de referencias) */}
-                    {formattedRefs.length > 0 && !answerHasRefs && (
-                      <div style={{ marginTop: 12, borderTop: "1px solid #27272a", paddingTop: 10 }}>
-                        <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: 6 }}>
-                          Referencias
-                        </div>
-                        <ul style={{ margin: 0, paddingLeft: 18, color: "#a1a1aa", fontSize: "0.9rem" }}>
-                          {formattedRefs.map((r) => (
-                            <li key={r.key}>{r.label}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </section>
-
-            {/* VISTA MANUAL */}
-            <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: "2rem" }}>
-              <aside
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem",
-                  maxHeight: "70vh",
-                  overflowY: "auto",
-                  paddingRight: "10px",
-                }}
-              >
-                {filteredManual.map((m, i) => (
                   <button
-                    key={m.id}
-                    onClick={() => setIdx(i)}
+                    onClick={handleCopyMapa}
                     style={{
-                      textAlign: "left",
-                      padding: "12px",
-                      borderRadius: "6px",
-                      background: idx === i ? "#2563eb" : "#18181b",
+                      padding: "12px 24px",
+                      background: enlaceCopiado ? "#20c997" : "#2563eb",
                       color: "white",
-                      border: "1px solid #27272a",
+                      border: "none",
+                      borderRadius: "8px",
                       cursor: "pointer",
+                      fontWeight: "bold",
+                      width: "100%",
+                      transition: "0.2s",
                     }}
                   >
-                    {m.id}. {m.titulo}
+                    {enlaceCopiado ? "¡Enlace Copiado!" : "Copiar Enlace"}
                   </button>
-                ))}
-              </aside>
+                </div>
+              </section>
 
-              <article
+              {/* TARJETAS DE ESTACIONES */}
+              <div
                 style={{
-                  background: "#18181b",
-                  padding: "2.5rem",
-                  borderRadius: "12px",
-                  border: "1px solid #27272a",
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+                  gap: "2rem",
                 }}
               >
-                <h2 style={{ color: "#3b82f6", marginBottom: "1.5rem" }}>{mActual.titulo}</h2>
-
-                {mActual.secciones.map((s, i) => (
-                  <div key={i} style={{ marginBottom: "2rem" }}>
-                    <h3 style={{ fontSize: "1.2rem", color: "#f4f4f5" }}>{s.t}</h3>
-                    {s.p.map((p, pi) => (
-                      <p key={pi} style={{ color: "#a1a1aa", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                        • {p}
-                      </p>
-                    ))}
-                  </div>
-                ))}
-              </article>
-            </div>
-          </>
-        ) : (
-          /* VISTA RECURSOS (GASOLINERAS) */
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            {/* QR CENTRALIZADO */}
-            <section
-              style={{
-                display: "flex",
-                background: "#18181b",
-                padding: "2rem",
-                borderRadius: "16px",
-                border: "1px solid #3b82f6",
-                alignItems: "center",
-                gap: "2rem",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <div style={{ background: "white", padding: "10px", borderRadius: "8px" }}>
-                <img
-                  src={qrMapa}
-                  alt="QR Mapa"
-                  style={{ width: "160px", height: "160px", objectFit: "contain" }}
-                />
-              </div>
-
-              <div style={{ maxWidth: "400px", textAlign: "left" }}>
-                <h2 style={{ margin: "0 0 10px 0" }}>Mapa Autorizado</h2>
-                <p style={{ color: "#a1a1aa", fontSize: "0.9rem", marginBottom: "20px" }}>
-                  Utiliza este código para acceder a la ubicación de todas las estaciones o comparte el enlace con los
-                  conductores.
-                </p>
-
-                <button
-                  onClick={handleCopyMapa}
-                  style={{
-                    padding: "12px 24px",
-                    background: enlaceCopiado ? "#20c997" : "#2563eb",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    fontWeight: "bold",
-                    width: "100%",
-                    transition: "0.2s",
-                  }}
-                >
-                  {enlaceCopiado ? "¡Enlace Copiado!" : "Copiar Enlace"}
-                </button>
-              </div>
-            </section>
-
-            {/* TARJETAS DE ESTACIONES */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-                gap: "2rem",
-              }}
-            >
-              {filteredGasolineras.map((g) => (
-                <div
-                  key={g.id}
-                  style={{
-                    background: "#18181b",
-                    padding: "1.5rem",
-                    borderRadius: "16px",
-                    border: `1px solid ${g.status === "ok" ? "#20c997" : "#f59f00"}`,
-                    display: "flex",
-                    flexDirection: "column",
-                    position: "relative",
-                  }}
-                >
-                  {/* Cabecera Tarjeta */}
+                {filteredGasolineras.map((g) => (
                   <div
+                    key={g.id}
                     style={{
+                      background: "#18181b",
+                      padding: "1.5rem",
+                      borderRadius: "16px",
+                      border: `1px solid ${g.status === "ok" ? "#20c997" : "#f59f00"}`,
                       display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      marginBottom: "1rem",
+                      flexDirection: "column",
+                      position: "relative",
                     }}
                   >
-                    <span style={{ fontSize: "0.75rem", color: "#3b82f6", fontWeight: "bold" }}>
-                      {g.pais.toUpperCase()}
-                    </span>
-
-                    <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                      <span
-                        style={{
-                          fontSize: "0.7rem",
-                          padding: "2px 8px",
-                          borderRadius: "4px",
-                          background: g.status === "ok" ? "rgba(32,201,151,0.1)" : "rgba(245,159,0,0.1)",
-                          color: g.status === "ok" ? "#20c997" : "#f59f00",
-                          border: `1px solid ${
-                            g.status === "ok" ? "rgba(32,201,151,0.2)" : "rgba(245,159,0,0.2)"
-                          }`,
-                        }}
-                      >
-                        {g.status === "ok" ? "OBLIGADO" : "CONDICIONADO"}
+                    {/* Cabecera Tarjeta */}
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <span style={{ fontSize: "0.75rem", color: "#3b82f6", fontWeight: "bold" }}>
+                        {g.pais.toUpperCase()}
                       </span>
 
-                      <button
-                        onClick={() => handleCopyInstruccion(`${g.instrucciones}`, g.id)}
-                        style={{
-                          background: "transparent",
-                          border: "none",
-                          color: instruccionCopiada === g.id ? "#20c997" : "#52525b",
-                          cursor: "pointer",
-                          fontSize: "0.75rem",
-                          fontWeight: "bold",
-                          transition: "color 0.2s",
-                        }}
-                      >
-                        {instruccionCopiada === g.id ? "Copiado" : "Copiar"}
-                      </button>
+                      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                        <span
+                          style={{
+                            fontSize: "0.7rem",
+                            padding: "2px 8px",
+                            borderRadius: "4px",
+                            background: g.status === "ok" ? "rgba(32,201,151,0.1)" : "rgba(245,159,0,0.1)",
+                            color: g.status === "ok" ? "#20c997" : "#f59f00",
+                            border: `1px solid ${
+                              g.status === "ok" ? "rgba(32,201,151,0.2)" : "rgba(245,159,0,0.2)"
+                            }`,
+                          }}
+                        >
+                          {g.status === "ok" ? "OBLIGADO" : "CONDICIONADO"}
+                        </span>
+
+                        <button
+                          onClick={() => handleCopyInstruccion(`${g.instrucciones}`, g.id)}
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            color: instruccionCopiada === g.id ? "#20c997" : "#52525b",
+                            cursor: "pointer",
+                            fontSize: "0.75rem",
+                            fontWeight: "bold",
+                            transition: "color 0.2s",
+                          }}
+                        >
+                          {instruccionCopiada === g.id ? "Copiado" : "Copiar"}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Cuerpo Tarjeta */}
+                    <h4 style={{ margin: "0 0 0.5rem 0", color: "#fff", fontSize: "1.1rem" }}>{g.nombre}</h4>
+
+                    <div
+                      style={{
+                        background: "rgba(255,255,255,0.05)",
+                        padding: "12px",
+                        borderRadius: "8px",
+                        borderLeft: `4px solid ${g.status === "ok" ? "#20c997" : "#f59f00"}`,
+                        marginTop: "auto",
+                      }}
+                    >
+                      <p style={{ margin: 0, fontSize: "0.9rem", color: "#e4e4e7", lineHeight: "1.4" }}>
+                        {g.instrucciones}
+                      </p>
                     </div>
                   </div>
-
-                  {/* Cuerpo Tarjeta */}
-                  <h4 style={{ margin: "0 0 0.5rem 0", color: "#fff", fontSize: "1.1rem" }}>{g.nombre}</h4>
-
-                  <div
-                    style={{
-                      background: "rgba(255,255,255,0.05)",
-                      padding: "12px",
-                      borderRadius: "8px",
-                      borderLeft: `4px solid ${g.status === "ok" ? "#20c997" : "#f59f00"}`,
-                      marginTop: "auto",
-                    }}
-                  >
-                    <p style={{ margin: 0, fontSize: "0.9rem", color: "#e4e4e7", lineHeight: "1.4" }}>
-                      {g.instrucciones}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </main>
-    </div>
+          )}
+        </main>
+      </div>
+    </AccessGate>
   );
 }
+
 
 
 
