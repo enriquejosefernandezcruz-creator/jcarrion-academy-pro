@@ -1,0 +1,859 @@
+[
+  {
+    "id": "01",
+    "titulo": "ANTES DE INICIAR EL VIAJE",
+    "secciones": [
+      {
+        "t": "01.01 Recepción del servicio",
+        "p": [
+          "El Operador de Tráfico asigna nuevo servicio cuando finalizas el anterior o estás próximo a finalizarlo.",
+          "Los detalles del servicio se envían por Tablet y se confirma por llamada del Operador.",
+          "Si hay circunstancias especiales, se adjunta mensaje explicativo a la tarea y se aclara por teléfono.",
+          "Si el vehículo no está en condiciones o no estás apto físicamente, comunicar de inmediato para reasignación.",
+          "Comunicación operativa: respuestas claras y directas para agilizar la gestión.",
+          "Cumplir instrucciones del Operador: rutas, repostajes, peajes/túneles, tasas, tren/ferry, tiempos de conducción/descanso.",
+          "Comprender instrucciones (ruta, temperatura, destino). Si hay dudas, consultar.",
+          "Seguir rutas marcadas por la compañía y no abandonarlas sin autorización.",
+          "Detectar y corregir desviaciones/incidencias de temperatura durante el viaje.",
+          "Informar retrasos previstos en ETA para actuación coordinada."
+        ]
+      },
+      {
+        "t": "01.02 Control de documentación",
+        "p": [
+          "Antes de iniciar el viaje (subida + retorno) comprobar disponibilidad de documentación completa.",
+          "No disponer de documentación se considera falta/infracción laboral y genera riesgo operativo.",
+          "Comunicar a la base si falta algún documento.",
+          "Renovar y entregar copia de DNI/NIE/CAP si caducan; sin documentación vigente no se puede trabajar.",
+          "Verificar documentación de: UT, semirremolque, empresa, conductor y formularios de viaje.",
+          "Verificar tarjetas/medios de pago asignados (según circuitos y UT adicionales)."
+        ]
+      },
+      {
+        "t": "01.03 Procedimiento de enganche y desenganche",
+        "p": [
+          "Asegurar semirremolque frenado antes de maniobrar.",
+          "Alinear tractora con semirremolque; retroceder lento en línea recta hasta acoplar quinta rueda y kingpin.",
+          "Regular altura de la tractora ligeramente por debajo del semirremolque para acople correcto.",
+          "Con frenos del semirremolque activados, levantar ligeramente tractora y avanzar para comprobar enganche.",
+          "Revisión visual del enganche: sin holgura entre quinta rueda y semirremolque; herradura cerrada sobre kingpin.",
+          "Comprobar chaveta/cerrojo de seguridad en posición correcta (bajada)."
+        ]
+      },
+      {
+        "t": "01.04 Comprobación de elementos auxiliares",
+        "p": [
+          "Inspección visual exterior del semirremolque: golpes, roces o daños aparentes.",
+          "Verificar ausencia de piezas sueltas/rotas.",
+          "Comprobar existencia y estado de elementos de sujeción (barras y cinchas).",
+          "Comprobar palés y barras correctamente colocadas; cumplimentar hoja de control de palés y barras.",
+          "Revisar patas de apoyo: no dobladas y operativas.",
+          "Apertura de puertas con control y fijación; precaución por estado del suelo/mercancía (riesgo caídas/aplastamientos).",
+          "Antes de iniciar el viaje: revisar depósitos de gasoil (UT y SR) y repostar en puntos autorizados si procede.",
+          "Uso de guantes y máxima precaución al repostar gasoil/urea para evitar derrames."
+        ]
+      },
+      {
+        "t": "01.05 Comprobación del estado del vehículo",
+        "p": [
+          "Realizar verificación técnica previa: estado general, elementos de seguridad y condiciones para servicio.",
+          "Comunicar de inmediato cualquier anomalía detectada antes de iniciar marcha."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "titulo": "EN EL PUNTO DE RECOGIDA",
+    "secciones": [
+      {
+        "t": "02.01 Llegada al lugar de recogida",
+        "p": [
+          "El conductor es la imagen ante el cliente: presencia, conducta profesional y predisposición; evitar discusiones.",
+          "Si hay problema antes de llegar (demora, incidencia), avisar al Operador de Tráfico.",
+          "Presentarse con ropa adecuada y limpia, calzado de seguridad, chaleco y EPIs exigidos por el cliente.",
+          "Identificarse como conductor de la empresa y presentar documentación al responsable del almacén/carga.",
+          "Informarse de muelle asignado y normas de seguridad, acceso y permanencia en instalaciones.",
+          "Circular y maniobrar dentro de instalación con precaución conforme a normas del cliente.",
+          "Ante incidente con el vehículo: informar al responsable del muelle y al Operador de Tráfico."
+        ]
+      },
+      {
+        "t": "02.02 En el momento de la carga (normas generales en muelles)",
+        "p": [
+          "Una vez asignado muelle, estacionar en el número indicado.",
+          "Si vienes a cargar, el remolque debe acceder libre de palés/materiales y convenientemente refrigerado.",
+          "No abrir puertas traseras hasta indicación del personal del muelle.",
+          "Aproximación al muelle con control, evitando golpes bruscos a topes/abrigos.",
+          "Si el semirremolque no está acoplado durante carga/descarga, usar caballete de seguridad.",
+          "Abrir puertas con precaución por riesgo de desprendimientos o apertura repentina por meteorología.",
+          "Asegurar puertas abiertas enganchadas a las paredes del vehículo; recordar precintar el vehículo.",
+          "Asegurar correcto acoplamiento entre remolque y plataforma del muelle.",
+          "Prohibido situarse detrás de otros vehículos para dirigir maniobras o tareas ajenas (riesgo aplastamiento).",
+          "Regular suspensión para eliminar desniveles entre rampa y remolque.",
+          "Inmovilizar con freno de mano y calzo durante carga/descarga.",
+          "No retirarse sin comprobar: faldón de rampa recogido, puertas/persianas muelle cerradas, autorización responsable y semáforo en verde."
+        ]
+      },
+      {
+        "t": "02.03 Distribución de la carga",
+        "p": [
+          "No sobrepasar la carga máxima permitida; comunicar exceso de peso antes de salir.",
+          "Distribuir pesos: mayor peso en parte inferior y reparto uniforme.",
+          "Configurar pedidos congelados a -25 ºC en automático cuando proceda.",
+          "Comunicar al Operador de Tráfico cualquier incidencia relevante antes de abandonar la instalación."
+        ]
+      },
+      {
+        "t": "02.04 Distribución de palés",
+        "p": [
+          "Registrar intercambio de palés con cantidades según procedimiento.",
+          "Conservar documentación acreditativa del intercambio junto al expediente del viaje."
+        ]
+      },
+      {
+        "t": "02.05 Asegurar la carga",
+        "p": [
+          "Controlar estiba y sujeción en zona segura.",
+          "Si no se permite presencia en carga/estiba, anotar incidencia en documentación (CMR) según corresponda.",
+          "Cerrar puertas con candado y colocar precinto; verificar integridad en paradas."
+        ]
+      },
+      {
+        "t": "02.06 Uso de barras y cinchas",
+        "p": [
+          "Verificar barras/cinchas en buen estado y uso conforme a normativa del cliente y del tipo de carga.",
+          "Asegurar la carga antes de iniciar marcha y tras cualquier intervención autorizada."
+        ]
+      },
+      {
+        "t": "02.07 Transporte de mercancías a temperatura controlada",
+        "p": [
+          "Mantener cadena de frío: la temperatura es un factor crítico y debe controlarse rigurosamente.",
+          "Puntos críticos: almacenamiento en origen, transporte en vehículo frigorífico y plataforma/distribución.",
+          "Evitar prácticas que comprometan calidad/seguridad alimentaria (aperturas innecesarias, falta de preenfriado, etc.)."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "titulo": "EN RUTA",
+    "secciones": [
+      {
+        "t": "03.01 Comprobación diaria antes de empezar el viaje",
+        "p": [
+          "Realizar comprobaciones diarias del estado operativo del vehículo antes de iniciar marcha.",
+          "Comunicar incidencias detectadas antes de continuar el viaje."
+        ]
+      },
+      {
+        "t": "03.02 Peajes, túneles y dispositivos de pago",
+        "p": [
+          "DESCRIPCIÓN: Uso obligatorio de los dispositivos de peaje asignados (OBU) para el pago de peajes, túneles y tasas en los países de tránsito.",
+          "Existen dos dispositivos principales de peaje en la operativa: UTA ONE NEXT (UTA) y K1 (VAT SERVICES).",
+          "Cada dispositivo es válido únicamente en los países indicados en el manual y debe utilizarse solo en las zonas autorizadas.",
+          "DISPOSITIVO UTA ONE NEXT (UTA): Válido en Francia, España, Portugal, Italia, Austria, Bélgica (incluye túnel Liefkenshoek), Polonia (A4 Katowice–Cracovia), Alemania, Noruega (incluye conexión Svinesunds), Dinamarca y Suecia (puente Øresund), Suiza (incluye Liechtenstein), Hungría, Bulgaria, Eslovaquia, Eslovenia y Croacia.",
+          "DISPOSITIVO K1 (VAT SERVICES): Válido en los mismos países que UTA ONE NEXT, con idénticas limitaciones operativas.",
+          "ADVERTENCIA: Antes de adquirir o sustituir un dispositivo de peaje, se debe verificar expresamente que los países mencionados en este manual figuran como compatibles en el nuevo dispositivo, ya que los sistemas de peaje se encuentran en proceso de mejora continua y la cobertura por países puede ampliarse o modificarse con el tiempo.",
+          "El conductor debe asegurarse de que el dispositivo de peaje está correctamente instalado, activo y operativo antes de iniciar el viaje.",
+          "No se debe improvisar ningún método alternativo de pago (efectivo, tarjeta personal u otros sistemas) sin autorización expresa del Operador de Tráfico.",
+          "Ante cualquier incidencia con el dispositivo (fallo, no lectura, luz incorrecta), se debe informar inmediatamente al Operador de Tráfico.",
+          "DISPOSITIVOS A RECOGER EN FRONTERA:",
+          "DARS GO: Dispositivo válido para Eslovenia. Debe recogerse obligatoriamente en la frontera de Eslovenia, en cualquiera de los puntos oficiales de recogida.",
+          "MYTO CZ: Dispositivo válido para la República Checa. Debe recogerse en frontera en los puntos oficiales habilitados.",
+          "MYTO SKY-TOLL: Dispositivo válido para Eslovaquia. Solo es necesario si se utiliza un OBU multipaís AXXÈS. Debe recogerse en frontera en los puntos oficiales.",
+          "ADVERTENCIA OPERATIVA: Antes de acceder a países que requieren dispositivos específicos recogidos en frontera (como MYTO CZ para la República Checa), el conductor debe comprobar previamente si el dispositivo de peaje multipaís asignado incluye ya dicho país como activo, ya que la cobertura de los dispositivos puede ampliarse con el tiempo.",
+          "Si el país figura como activo y operativo en el dispositivo de peaje instalado, no será necesario recoger un dispositivo adicional en frontera.",
+          "En caso de duda sobre la cobertura real del dispositivo asignado, se debe verificar la información en la aplicación de configuración de la Tablet o consultar al Operador de Tráfico antes de acceder al país.",
+          "CONFIGURACIÓN DEL DISPOSITIVO MEDIANTE LA TABLET (APP TELEPASS TRUCK):",
+          "La configuración del dispositivo de peaje se realiza desde la Tablet mediante la aplicación T TRUCK (Telepass Truck), usando conexión Bluetooth entre el OBU y la Tablet.",
+          "La aplicación permite visualizar y configurar: número de ejes del vehículo, peso del conjunto y países activos para el peaje.",
+          "PASO 1: Abrir en la Tablet la aplicación T TRUCK (Telepass Truck).",
+          "PASO 2: Introducir las credenciales iniciales facilitadas por la empresa para el primer acceso.",
+          "PASO 3: Emparejar el dispositivo UTA ONE NEXT con la Tablet pulsando el botón rojo/naranja del dispositivo hasta que la luz azul parpadee.",
+          "PASO 4: En la aplicación, pulsar el botón 'Par' para completar el emparejamiento Bluetooth.",
+          "PASO 5: Esperar a la confirmación de conexión entre el dispositivo de peaje y la Tablet.",
+          "Una vez conectado, la aplicación mostrará el identificador del dispositivo (OBU ID) y permitirá revisar la configuración.",
+          "PAÍSES ACTIVOS: Al tocar la bandera del país y deslizar hacia la derecha se mostrarán todos los países activos en el dispositivo.",
+          "CONFIGURACIÓN DE EJES Y PESO: No modificar el número de ejes ni el peso del camión salvo que sea estrictamente necesario y se detecte una configuración incorrecta.",
+          "Cualquier modificación errónea en ejes, peso o países activos puede generar sanciones económicas y responsabilidades para el conductor.",
+          "En caso de duda durante la configuración o funcionamiento del dispositivo de peaje, detener la operativa y contactar con el Operador de Tráfico antes de continuar."
+        ]
+      },
+      {
+        "t": "03.02.1 Tarjetas para retirada y pago de dispositivos de peaje",
+        "p": [
+          "DESCRIPCIÓN: Para la compra o retirada de determinados dispositivos de peaje en frontera, es obligatorio utilizar tarjetas corporativas autorizadas por la empresa.",
+          "Las tarjetas habilitadas para la retirada y pago de dispositivos de peaje son: Tarjeta UTA (Full Service Card) y Tarjeta Solred DKV.",
+          "En el momento de retirar el dispositivo de peaje en frontera, el conductor debe presentar la documentación del vehículo.",
+          "Es obligatorio comprobar en el momento de la recogida que la configuración del dispositivo es correcta, verificando especialmente que el número de ejes y el peso del vehículo están bien configurados.",
+          "Los dispositivos de peaje deben configurarse siempre con 5 ejes y un peso superior a 18 toneladas, salvo indicación contraria del Operador de Tráfico.",
+          "Una configuración incorrecta del dispositivo puede dar lugar a sanciones económicas, siendo el conductor responsable de verificarla en el momento de la retirada.",
+          "La modalidad de pago del dispositivo debe ser siempre POST-PAGO, de forma que los importes queden incluidos posteriormente en la factura del proveedor según el medio de pago utilizado.",
+          "Para efectuar el pago del dispositivo en frontera, el conductor puede presentar indistintamente la tarjeta UTA o la tarjeta Solred DKV, según disponibilidad.",
+          "El dispositivo de peaje debe devolverse en frontera durante el viaje de retorno para poder recuperar la fianza depositada.",
+          "ADVERTENCIA IMPORTANTE: Si el dispositivo permanece 6 meses sin actividad de peajes, el proveedor procede a su bloqueo automático y no será posible recuperar la fianza, incluso aunque el dispositivo sea devuelto posteriormente."
+        ]
+      },
+      {
+        "t": "03.02.2 Tasas, viñetas y túneles: medios de pago",
+        "p": [
+          "DESCRIPCIÓN: Algunos países o infraestructuras requieren el pago mediante tasas, viñetas o tarjetas específicas, según el tipo de vía.",
+          "TASAS:",
+          "Dinamarca: El pago se realiza únicamente para dispositivos AXXÈS. El pago se gestiona por internet y la información se comunica posteriormente al conductor.",
+          "Inglaterra: El pago se realiza por internet y se comunica al conductor una vez completado.",
+          "Bulgaria: El pago de tasas se realiza mediante tarjeta UTA.",
+          "VIÑETAS:",
+          "Luxemburgo: Se paga con tarjeta UTA. En caso de viaje a Noruega, se debe adquirir viñeta con una validez de 7 días.",
+          "Holanda: Viñeta pagadera con tarjeta UTA.",
+          "Suecia: Viñeta pagadera con tarjeta UTA.",
+          "Lituania: Viñeta pagadera con tarjeta UTA.",
+          "Letonia: Viñeta pagadera con tarjeta UTA.",
+          "Rumanía: Viñeta pagadera con tarjeta UTA.",
+          "TÚNELES Y PUENTES:",
+          "Túnel de Fréjus (IT-FR / FR-IT): El pago se realiza mediante la tarjeta específica del Túnel de Fréjus.",
+          "Túnel de Mont Blanc (IT-FR / FR-IT): Si no se dispone de la tarjeta del túnel, se debe contactar con el equipo de tráfico para gestionar un método alternativo de acceso.",
+          "Túnel Maurice-Lemaire (Francia): El pago se realiza con tarjeta UTA o en efectivo.",
+          "Túnel de Puymorens (Francia): El pago se realiza con tarjeta UTA o en efectivo.",
+          "Túnel de San Bernardo (IT-CH): El pago se realiza con tarjeta UTA o en efectivo.",
+          "Puente Danubio (Rumanía): El pago se realiza con tarjeta UTA o en efectivo.",
+          "Puente Malmö (Dinamarca): El pago se realiza con tarjeta UTA o en efectivo.",
+          "ADVERTENCIA: La obligación de viñeta, su modalidad y forma de pago pueden variar por país y periodo. Antes de iniciar el viaje, se debe verificar con el Operador de Tráfico si la viñeta es necesaria o si el país está ya cubierto por el dispositivo de peaje activo.",
+          "NOTA: Las tablas de tasas, viñetas, túneles y peajes se actualizan periódicamente. En caso de duda o de no poder cumplir con las instrucciones de pago, se debe consultar previamente con el Operador de Tráfico."
+        ]
+      },
+      {
+        "t": "03.03 Tren y Ferry (Uso del tacógrafo)",
+        "p": [
+          "En el caso de tener que realizar un desplazamiento en tren o ferry, el conductor recibirá un mensaje con el detalle de las instrucciones necesarias, incluyendo lugar, referencia de cita o reserva, fecha, hora y otros datos necesarios.",
+          "Antes de desenganchar el semirremolque frigorífico, se debe llenar el depósito de combustible del equipo de frío.",
+          "Al dejar el semirremolque, se debe revisar el estado del candado y/o precinto colocado.",
+          "Uso del tacógrafo digital en desplazamientos en tren o ferry:",
+          "Tacógrafo VDO de 2ª generación: el modo ferry/tren debe cambiarse en el momento en que el vehículo haya ocupado su posición en el transbordador o tren.",
+          "La grabación debe iniciarse antes de apagar el motor del vehículo.",
+          "Procedimiento VDO:",
+          "1) Seleccionar los elementos correspondientes del menú del tacógrafo. El paso siguiente dependerá de si se trata del comienzo o del final del transporte.",
+          "2) Consignar el comienzo o el final del transporte en el transbordador o tren.",
+          "3) La grabación termina en cuanto se desconecta el menú o se extrae la tarjeta del conductor.",
+          "Si durante el trayecto en transbordador o tren se retira la tarjeta y se vuelve a insertar, deberá volver a consignarse la entrada.",
+          "Tacógrafo Stoneridge: para activar la condición de ferry/tren (estando en la cola o a bordo del ferry o tren) se deben seguir los siguientes pasos:",
+          "1) Pulsar OK para mostrar el menú.",
+          "2) Seleccionar la opción: LUGARES.",
+          "3) Pulsar OK y seleccionar: ferry/tren.",
+          "4) Pulsar OK para confirmar. La actividad ferry/tren queda activada."
+        ]
+      },
+      {
+        "t": "03.04 ADUANA",
+        "p": [
+          "Instrucciones para las gestiones en aduana.",
+          "En las aduanas que tengas en la ruta (tránsito aduanero), debes verificar que llevas toda la documentación correspondiente al trámite.",
+          "En caso de faltar cualquier requisito, el camión puede ser retenido en la aduana.",
+          "El Operador de Tráfico te recordará los pasos a seguir mediante mensaje o llamada telefónica; ante cualquier duda, debes consultarle.",
+          "Los documentos requeridos en aduana son el DUA y el documento de tránsito aduanero (T1, T2 o T2L).",
+          "T1: Origen en país no comunitario y destino en país de la Comunidad Económica Europea.",
+          "T2: Origen en país de la Comunidad Económica Europea y destino en país no comunitario.",
+          "T2L: Origen en país de la Comunidad Económica Europea, tránsito por país no comunitario y destino final en país de la Comunidad Económica Europea."
+        ]
+      },
+      {
+        "t": "03.05 GASTOS. REPOSTADAS",
+        "p": [
+          "Las instrucciones de cómo proceder en cada caso se encuentran definidas según país, tipo de gasoil, red de estación y tarjeta autorizada.",
+          "España, Alemania, Italia, Bélgica, Luxemburgo, Polonia, Francia y Rumanía: pago de GASOIL A en las estaciones de servicio IDS mediante tarjeta IDS A.",
+          "España: pago de GASOIL B en las estaciones de servicio IDS mediante tarjeta IDS B.",
+          "España (uso alternativo cuando no acepten otra tarjeta): con tarjeta DKV se puede pagar GASOIL A en estaciones REPSOL, CAMPSA y PETRONOR. Este uso es exclusivo en Europa y tiene un límite de repostada de 300 euros.",
+          "España: con tarjeta SOLRED se puede pagar GASOIL B en estaciones REPSOL, CAMPSA y PETRONOR (solo España).",
+          "Austria, Bélgica, Francia y Rumanía: con tarjeta AS24 se puede realizar el pago de GASOIL A y GASOIL B en las estaciones de servicio AS24.",
+          "Uso excepcional en cualquier país: la tarjeta UTA solo se utilizará cuando no acepten ninguna otra tarjeta. Límite de repostada: 300 euros.",
+          "Todas las tarjetas de repostaje indicadas son de adquisición por parte de la empresa."
+        ]
+      },
+      {
+        "t": "03.06 GASTOS. PAGO DE SANCIONES Y ANTICIPOS",
+        "p": [
+          "Las instrucciones de cómo proceder en cada caso se encuentran definidas según el tipo de gasto, país y tarjeta autorizada.",
+          "Pago de multas (todos los países): se debe utilizar exclusivamente la tarjeta GESTRANS / ASTRA.",
+          "La tarjeta GESTRANS / ASTRA tiene como única función el pago de multas que se puedan originar durante el servicio de transporte.",
+          "Queda prohibido el uso de cualquier otra tarjeta para el pago de multas sin la autorización expresa del departamento de incidencias.",
+          "Antes de realizar el pago de una multa, el conductor debe transmitir la incidencia o multa al Operador de Tráfico y esperar instrucciones.",
+          "Monedero (todos los países): para la disposición de dinero en efectivo se debe utilizar la tarjeta GURECARD.",
+          "La tarjeta GURECARD es personal e intransferible.",
+          "La tarjeta GURECARD es una tarjeta monedero que requiere el ingreso previo de efectivo para que el conductor pueda retirar dinero en el cajero (tarjeta prepago).",
+          "La tarjeta GURECARD solo se puede utilizar para la retirada de efectivo; no se debe usar para pagar en establecimientos.",
+          "Es responsabilidad del conductor disponer de efectivo para cubrir cualquier situación imprevista durante la realización del servicio.",
+          "Procedimiento de solicitud de efectivo: las solicitudes se gestionarán con la base correspondiente a cada conductor.",
+          "El conductor debe prever, en la medida de lo posible, las necesidades de efectivo que va a tener; fuera del horario indicado solo se atenderán peticiones de carácter urgente que afecten o puedan causar incidencias en el viaje.",
+          "Limitaciones de la tarjeta GURECARD: importe mínimo de recarga 300 euros.",
+          "Limitaciones de la tarjeta GURECARD: número máximo de recargas mensuales 2.",
+          "Limitaciones de la tarjeta GURECARD: importe máximo mensual 600 euros.",
+          "Se aconseja no retirar efectivo en países con moneda distinta del euro.",
+          "Todas las tarjetas indicadas son de adquisición por parte de la empresa."
+        ]
+      },
+      {
+        "t": "03.07 GASTOS. HOJA DE CONSUMO",
+        "p": [
+          "Registrar todas las repostadas realizadas durante el servicio.",
+          "En cada parada para repostar se debe registrar una línea en la hoja de consumo.",
+          "El registro se realizará en orden de fecha.",
+          "Los datos básicos a registrar son: fecha, kilómetros, población y tarjeta utilizada.",
+          "A continuación, se completarán los datos según el vehículo: unidad tractora (U.T.), semirremolque (S.R.) u otros, según corresponda.",
+          "En el caso del semirremolque (S.R.), se debe indicar en su columna correspondiente si se ha repostado gasóleo A o gasóleo B.",
+          "Entrega de documentación: cada vez que se regrese a la base, se debe entregar la hoja de consumo junto con los tickets en el sobre de gastos de combustible.",
+          "Las repostadas se deben realizar en las estaciones de servicio del listado: estaciones preferentes (llenado completo) y estaciones autorizadas (hasta 500 litros).",
+          "Si es necesario repostar en una estación distinta a las del listado, se debe solicitar autorización previa al Operador de Tráfico."
+        ]
+      },
+      {
+        "t": "03.08 PAUSAS, ÁREAS DE SERVICIO Y ZONAS DE APARCAMIENTO",
+        "p": [
+          "Instrucciones para las pausas y la elección de los parkings.",
+          "Sin autorización del Operador de Tráfico, está totalmente prohibido el estacionamiento en el trayecto comprendido entre Martorell del Vallés y la frontera francesa, en ambos sentidos.",
+          "Sin autorización del Operador de Tráfico, está totalmente prohibido estacionar en cualquier parking localizado a menos de 200 km del acceso al Eurotúnel de Calais con destino Reino Unido.",
+          "Estas autorizaciones solo se concederán cuando sea totalmente necesario para cumplir con los servicios prestados.",
+          "Transportes de cargas especiales: por petición del cliente, por el valor de la mercancía o por las características del servicio, algunos transportes requieren precauciones extraordinarias que garanticen el estado y la seguridad de la mercancía.",
+          "En transportes de cargas especiales, se deben cumplir rigurosamente las instrucciones del Operador de Tráfico en cuanto a la ubicación de las paradas y descansos (nombre, dirección, teléfono y persona de contacto del parking o zona vigilada).",
+          "Durante las paradas y descansos en transportes de cargas especiales, se debe permanecer en el vehículo mientras esté parado o realizando el descanso.",
+          "Cualquier cambio en la parada (pausa o descanso) debe ser informado previamente y autorizado por el Operador de Tráfico.",
+          "Uso del tacógrafo en las pausas y descansos: al detener el vehículo, el tacógrafo pasa automáticamente a modo 'Descanso'.",
+          "Se debe comprobar siempre que el tacógrafo queda en modo 'Pausa/Descanso'; si no aparece de forma automática, se debe seleccionar manualmente dicha actividad, ya que de lo contrario ese tiempo no contará como descanso.",
+          "Si se deja la tarjeta del conductor en el tacógrafo: comprobar que aparece la actividad 'Pausa/Descanso' de forma automática o seleccionarla manualmente.",
+          "Al reanudar la marcha con la tarjeta introducida, el tacógrafo digital pasará automáticamente a 'Tiempo de conducción'.",
+          "Si se prefiere llevar consigo la tarjeta del conductor: antes de abandonar el vehículo se debe cerrar la sesión introduciendo el país de llegada.",
+          "Al regresar al vehículo sin la tarjeta insertada, se debe registrar manualmente el descanso al iniciar la sesión (actividad 'Pausa/Descanso').",
+          "Nota para el modelo de tacógrafo STONERIDGE: al insertar la tarjeta, el sistema preguntará '¿Descanso hasta ahora?'; se debe pulsar OK e introducir los países de fin de descanso (destino) y de inicio, y confirmar para quedar listo para conducir.",
+          "En cada parada se debe revisar el estado del candado y/o de los precintos colocados en la puerta del semirremolque.",
+          "Si se detecta cualquier indicio de manipulación de candados o precintos, se debe llamar de inmediato al Operador de Tráfico.",
+          "En cada pausa se debe comprobar el estado del equipo de frío y que la temperatura de retorno es conforme a la temperatura de consigna.",
+          "En caso de mal funcionamiento o avería del equipo de frío, se debe avisar de inmediato al Operador de Tráfico.",
+          "Protocolo de control para viajes con destino a Reino Unido: el conductor debe realizar un control antes de entrar en Reino Unido para reducir el riesgo de entrada de inmigrantes ilegales.",
+          "Este protocolo es aplicable a todos los viajes con destino a Reino Unido, incluyendo accesos desde puertos marítimos europeos y desde el Eurotúnel.",
+          "Se deben utilizar los medios y dispositivos de seguridad disponibles (candado, precinto u otros sistemas).",
+          "No se deben realizar paradas en aparcamientos no seguros a menos de 150 km del Eurotúnel de Calais.",
+          "Se deben realizar comprobaciones de seguridad en cada parada.",
+          "Si se sospecha que alguien se esconde en el interior del vehículo, se debe avisar inmediatamente al Operador de Tráfico.",
+          "Actuaciones de seguridad Food Defense: el teclado del controlador del equipo de frío puede ser manipulado por personas ajenas.",
+          "Tras configurar la temperatura de consigna, el teclado del controlador del equipo de frío debe bloquearse mediante código.",
+          "Las paradas en áreas de servicio o aparcamientos sin vigilancia ni sistemas de seguridad son más peligrosas.",
+          "Es muy importante programar y realizar las paradas en sitios seguros.",
+          "Los operadores de tráfico recomendarán las mejores opciones de aparcamiento para realizar los descansos y advertirán de los lugares que entrañen más peligro.",
+          "Es responsabilidad del conductor revisar el cierre de las puertas y el estado del candado en cada parada.",
+          "Siempre que sea posible, se debe realizar el estacionamiento contra una pared o contra otro vehículo para impedir la apertura de las puertas."
+        ]
+      },
+      {
+        "t": "03.09 SEGURIDAD EN CARRETERA. MULTAS",
+        "p": [
+          "En caso de multa o sanción durante el viaje, el conductor debe seguir el procedimiento establecido.",
+          "El conductor es responsable de circular con seguridad durante el servicio.",
+          "Evitar atravesar núcleos urbanos o zonas residenciales, especialmente en horarios nocturnos; en caso necesario, extremar las precauciones.",
+          "Mantener en correcto estado y utilizar adecuadamente todos los elementos de protección del vehículo.",
+          "Actuar con prudencia y responsabilidad, adaptando la conducción a las circunstancias propias, a las del vehículo y a las de la vía.",
+          "La carretera exige observación y anticipación constante para reaccionar de forma adecuada y segura.",
+          "Respetar los límites de velocidad, así como el resto de señales de tráfico e indicaciones de los agentes.",
+          "El conductor es responsable de las infracciones cometidas durante el viaje.",
+          "En caso de sanción y/o inmovilización del vehículo, el conductor debe contactar siempre con el Operador de Tráfico para informarle de la misma y resolver el pago de la posible multa mediante la empresa colaboradora de gestión de pagos.",
+          "Muy importante: en el momento de disponer de documentos relativos a una sanción, estos deben enviarse a la base correspondiente."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "titulo": "DESCARGA Y FIN DE VIAJE",
+    "secciones": [
+      {
+      "t": "04.01 Procedimiento para la descarga",
+      "p": [
+     "Al llegar al almacén, contactar con el Operador de Tráfico para confirmar que se ha llegado al lugar correcto de descarga.",
+     "Identificarse como conductor de Transportes JCarrion y presentar la documentación necesaria para la descarga a la persona responsable.",
+     "Seguir las instrucciones del cliente respecto al acceso y permanencia en las instalaciones y consultar los procedimientos internos (carga/descarga, prevención, higiene, temperaturas, zonas de espera y maquinaria).",
+     "No situarse en el muelle sin autorización. Antes de acceder, comprobar las características del muelle (altura, topes, etc.) y la altura y anchura de las puertas para evitar golpes o roces.",
+     "Inmovilizar el vehículo con el freno y comprobar el correcto ajuste al muelle; colocar calzos, abrir portones y fijarlos con los seguros.",
+     "Antes de abrir las puertas del semirremolque, informar al personal del almacén para que rompan el precinto o hacerlo en su presencia.",
+     "Si ocurre algún incidente con el vehículo, se debe elaborar el parte de accidente correspondiente entre las partes implicadas.",
+     "Vigilar la descarga de la mercancía para evitar que se imputen daños. Ante cualquier incidencia, es obligatorio anotarla en el CMR.",
+     "El conductor debe estar presente siempre durante la descarga. Si el almacén no permite el acceso, avisar al Operador de Tráfico y reflejar la incidencia en el CMR.",
+     "Corregir a la persona que descarga si se detecta que algo no se está realizando correctamente.",
+     "Comprobar que el número de palés descargados coincide con los cargados. En caso contrario, revisar el CMR y avisar al Operador de Tráfico.",
+     "Si la descarga se realiza mediante intercambio de palés, reclamar la misma cantidad de palés entregados, anotarlo en la hoja de ruta y en el CMR.",
+     "Comprobar el estado de los palés antes de aceptarlos y, si alguno viene deteriorado, rechazarlo.",
+     "Conservar cualquier documento que acredite el intercambio junto al expediente del viaje.",
+     "No realizar trasvase de mercancía a otros vehículos sin autorización del Operador de Tráfico.",
+     "Tras finalizar la descarga, colocar un nuevo precinto y asegurarse de que su número queda registrado en el CMR.",
+     "Completar el CMR indicando que el precinto estaba intacto (\"precinto OK\"), firmarlo, sellarlo y fecharlo por el destinatario.",
+     "Si se anota cualquier observación en el CMR (daños, diferencias de temperatura, faltantes, rotura de precinto, etc.), informar al Operador de Tráfico antes de mover el vehículo.",
+     "Comunicar inmediatamente al Operador de Tráfico cualquier rechazo de mercancía antes de abandonar el almacén.",
+     "No maniobrar ni abandonar el muelle sin autorización del personal del almacén.",
+     "Se recomienda confirmar la descarga en la Tablet y adicionalmente enviar un mensaje al Operador de Tráfico."
+     ]
+    },
+    {
+        "t": "04.02 Procedimiento fin de viaje",
+        "p": [
+          "Tras la descarga: barrido/cepillado en seco del interior del semirremolque y comprobación visual de higiene.",
+          "Verificar: ausencia de manchas y malos olores, insectos, restos de embalajes, rincones/rendijas, desagües y sujeciones.",
+          "Si no es suficiente: lavado interior con agua de red >85ºC, cepillado si procede y secado con puertas abiertas.",
+          "Tras productos cárnicos o pescado: lavado obligatorio del interior.",
+          "Si hay anomalía no subsanable: informar al Operador y llevar a base o emplazamiento homologado de limpieza.",
+          "Al finalizar viaje (subida + retorno): entregar hojas de viaje con tickets, CMRs y documentos asociados (multas, partes, permisos, etc.) en bases/lugares habilitados."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "titulo": "CONTROL DOCUMENTAL",
+    "secciones": [
+      {
+        "t": "05.01 CMR (Carta de Porte)",
+        "p": [
+          "El CMR es el contrato del servicio de transporte y el documento justificativo más importante.",
+          "La falta de entrega del CMR o incumplir requisitos del cliente impide facturación/cobro y abre incidencia grave.",
+          "El conductor debe asegurar disponibilidad de formatos en blanco si el almacén no los suministra.",
+          "Recoger firma del conductor y CIF de empresa (A04014635) cuando aplique.",
+          "Reservas y observaciones (casilla 18) antes de firmar si el cargador no adopta medidas recomendadas.",
+          "Usar descripciones estándar para incidencias: no presencia en carga/descarga, embalaje deficiente, faltan cantoneras/plástico/flejes, sin precintos, mercancía en mal estado, estiba excesiva, sin preenfriado, mala regulación termostato, retrasos del almacén, diferencias de bultos.",
+          "Cumplimiento de requisitos del cliente: albaranes, termografía, anotación de temperaturas (ej. 3 muestras en CMR cuando se requiera)."
+        ]
+      },
+      {
+        "t": "05.02 Hoja de enganche / desenganche",
+        "p": [
+          "Registrar intercambios de semirremolque para dejar constancia del estado general y equipamiento.",
+          "Obligatoria en cada intercambio; no entregarla implica asumir desperfectos/faltas y apertura de incidencia.",
+          "Cumplimentar una sola hoja y entregarla con el resto de documentación del viaje.",
+          "Incluir: localización/fecha/matrícula SR recibido, estado y equipamiento, documentación recibida e incidencias detectadas."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "titulo": "GESTIÓN DE INCIDENCIAS EN VIAJE",
+    "secciones": [
+      {
+        "t": "06.01 Actuación en caso de accidente vial",
+        "p": [
+          "Comunicar al Operador de Tráfico con la mayor brevedad posible e indicar ubicación exacta.",
+          "Aplicar P.A.S.: Proteger > Avisar > Socorrer según PRL.",
+          "Usar 112 (válido en países comunitarios) cuando proceda."
+        ]
+      },
+      {
+        "t": "06.02 Actuación en caso de avería",
+        "p": [
+          "Señalizar de forma segura; uso obligatorio de baliza V16 y chaleco reglamentario en parada por avería.",
+          "Contactar con mantenimiento/flota: ‘Averías 24H’ (según teléfono memorizado) o marcando 6510.",
+          "Mantener comunicación con Operador de Tráfico y seguir instrucciones."
+        ]
+      },
+      {
+        "t": "06.03 Actuación en caso de robo",
+        "p": [
+          "Seguir estrictamente rutas marcadas; no abandonarlas sin autorización del Operador.",
+          "Buscar aparcamientos seguros, especialmente por la noche.",
+          "En paradas: verificar dispositivos de seguridad y precintos intactos.",
+          "Mantener puertas del semirremolque cerradas; estacionar para poder observar aproximaciones.",
+          "Retirar llaves al repostar, entregar o descargar; no incluir datos identificativos en llaves.",
+          "No dejar pertenencias a la vista; activar medidas de seguridad (bloqueos, ventanillas, alarma).",
+          "No revelar contenido de carga/itinerarios/lugares de entrega, ni a otros conductores.",
+          "No subir a bordo a nadie salvo empleados de la empresa.",
+          "Estacionar contra pared u otro vehículo para impedir apertura de puertas cuando sea posible.",
+          "Confirmar dirección de entrega con Operador; informar incidencias de lugar/hora.",
+          "Robo con violencia: no ofrecer resistencia; informar al Operador cuando sea posible.",
+          "Con daños: contactar con Operador y valorar denuncia en comisaría."
+        ]
+      },
+      {
+        "t": "06.04 Actuación en caso de siniestro de mercancía",
+        "p": [
+          "Comunicar de inmediato al Operador de Tráfico cualquier daño/incidencia con mercancía.",
+          "No abandonar el punto sin instrucciones cuando exista rechazo/daño relevante.",
+          "Conservar evidencias y documentación; reflejar observaciones procedentes en documentación (CMR) según instrucciones."
+        ]
+      },
+      {
+        "t": "06.05 Actuación en caso de vertidos accidentales",
+        "p": [
+          "Riesgos identificados: aceites/anticongelante, combustible, AdBlue, mercancía ADR.",
+          "En derrames de repostaje gasoil/AdBlue: informar al responsable de la instalación y colaborar en aislamiento/contención.",
+          "Evitar que alcance alcantarillado (usar sepiolita cuando exista).",
+          "No usar móviles cerca de la zona del derrame.",
+          "En accidente con vertidos: avisar a autoridades (GC en España; en Francia gestión habitual por autopistas) y/o coordinar vía Operador.",
+          "Si derrame de gasoil: obligación de avisar a autoridades o llamar al Operador para que gestione aviso.",
+          "Aceites/anticongelante: usar absorbentes y gestionarlos como residuo peligroso; avisar si alcanza saneamiento.",
+          "ADR: informar al Operador; detener vertido, contener, gestionar residuo y limpiar el vehículo cuando sea posible."
+        ]
+      },
+      {
+        "t": "06.06 Actuación en caso de enfermedad",
+        "p": [
+          "Si no puedes continuar, informar inmediatamente al Operador de Tráfico.",
+          "En territorio UE/EEE/Suiza con Tarjeta Sanitaria Europea: acudir a servicios sanitarios presentando la tarjeta.",
+          "Si existe seguro médico de empresa: coordinar pasos a través del Operador.",
+          "Emergencias en España: 112."
+        ]
+      },
+      {
+        "t": "06.07 Solicitudes de asistencia",
+        "p": [
+          "Usar el icono en la aplicación (Agenda JCarrión) para acceder a teléfonos de atención al conductor (varía por UP).",
+          "Priorizar el ‘teléfono rojo’ por ser la vía más rápida para asistencia a planificación/pedido actual o próximo.",
+          "El botón genera solicitud directa para devolución de llamada con brevedad.",
+          "Dudas de medios de pago/sanciones/vacaciones/técnicas: gestionar con tu base.",
+          "Dudas de planificación/ejecución (rutas, referencias, incidencias en almacenes): consultar con equipo de tráfico."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "titulo": "TACÓGRAFO",
+    "secciones": [
+      {
+        "t": "07.01 Inicio del turno",
+        "p": [
+          "DESCRIPCIÓN: Instrucciones generales para el uso de tacógrafo digital.",
+          "1. Inserta la tarjeta del conductor.",
+          "Para que el tacógrafo digital almacene todas tus actividades diarias, ya te encuentres en el vehículo preparando el viaje, conduciendo, descansando o simplemente parado en un atasco, desde el principio debes insertar la tarjeta en el aparato.",
+          "Si viajas sólo, inserta la tarjeta en la ranura 1.",
+          "Si viajas con un segundo conductor, éste deberá insertar su tarjeta en la ranura 2.",
+          "Asegúrate de que la flecha mira hacia delante y el chip hacia arriba.",
+          "2. Inicia la sesión.",
+          "El menú que aparece en la pantalla del tacógrafo digital te guiará durante la sesión de inicio. Es un proceso rápido, sólo tienes que seguir estos pasos:",
+          "1) La hora local y la hora UTC aparecen durante un instante. Después, el aparato lee tus datos y muestra tu nombre. A continuación, se muestra cuándo extrajiste la tarjeta por última vez.",
+          "2) Es posible introducir manualmente datos adicionales en relación al tiempo que la tarjeta no ha estado en el tacógrafo.",
+          "3) Ahora debes introducir el país en el que comienza el turno. Las teclas de flecha permiten moverse por la lista alfabética de los países. Si en los días anteriores has introducido algún país, éste aparecerá al principio de la lista. Además, tendrás que introducir la región o Comunidad Autónoma.",
+          "4) Termina el inicio de sesión. A continuación, aparecerá la pantalla estándar:",
+          "Cambio de la hora local.",
+          "Puede adaptar la hora de la pantalla estándar al huso horario local tanto al comienzo como al final del horario de verano. Se puede ajustar en intervalos de 30 minutos.",
+          "Para el modelo antiguo de tacógrafo los pasos a seguir serían los siguientes:",
+          "1) Pulse OK para mostrar el menú.",
+          "2) Seleccione: CONFIGURACIÓN.",
+          "3) Pulse OK y seleccione: Hora local. Pulse OK.",
+          "4) Cambie la hora usando las flechas. Pulse OK para confirmar.",
+          "El tacógrafo (modelo antiguo) recuerda automáticamente los cambios de horario de invierno/verano. Cuando se necesiten ajustes la pantalla mostrará: ¿Nueva hora? Pulse OK para confirmar.",
+          "Ejemplo de pantalla/flujo (texto mostrado en el dispositivo): welcome / 16:00 14:00UTC / Última retirada / 22.10.03 23:30 / M entrada adicional? no / país comienzo / 23.10 14:00 : E / C.A. comienzo / 14:00 E AN / 15:01 / 123456.7km / 0km/h"
+        ]
+      },
+      {
+        "t": "07.02 Al volante",
+        "p": [
+          "Una vez que pones en marcha el vehículo ya no tienes que realizar ningún otro ajuste.",
+          "El tacógrafo pasa automáticamente a la actividad \"Tiempo de conducción\", y si viajas con un segundo conductor, a la actividad \"Tiempo de disponibilidad\".",
+          "Mientras conduces, normalmente no tendrás que preocuparte por el tacógrafo digital.",
+          "No obstante, tienes la posibilidad de visualizar en todo momento tus horas de conducción y tus descansos pulsando cualquier tecla de menú.",
+          "Por cuestiones de seguridad, el resto de las opciones de menú quedan bloqueadas durante el viaje.",
+          "Sin embargo, hay tres situaciones en las que se muestran mensajes que deben ser confirmados:",
+          "1. Advertencias de tiempo de trabajo.",
+          "Si llevas 4 horas y 15 minutos de conducción ininterrumpida, el tacógrafo te recuerda que en breve tendrás que hacer una pausa.",
+          "Una vez transcurridas 4 horas y 30 minutos aparecerá otro mensaje indicando que si no realizas una pausa habrás superado tu tiempo de conducción.",
+          "De esta forma, el aparato digital te ayuda a respetar los tiempos de conducción y descanso.",
+          "2. Cambio de conductor.",
+          "Si ha llegado el momento de que el segundo conductor se haga cargo de la conducción, hay que intercambiarse de puesto y realizar algunas acciones en el aparato:",
+          "1) Tu tarjeta se encuentra en la ranura 1 y la de tu compañero, en la ranura 2. Extrae ambas tarjetas y cámbialas de ranura.",
+          "Como el aparato te pedirá “cerrar sesión”, puedes indicarle que NO, porque el cierre se realiza al finalizar la jornada (empezar el descanso diario); antes no es necesario.",
+          "2) Después, ambos podéis continuar con el viaje.",
+          "3. Mensajes sobre fallos.",
+          "Cuando se produce un fallo, en pantalla aparece el mensaje correspondiente. Estos mensajes también se pueden confirmar pulsando dos veces la tecla OK.",
+          "* Nota: Si se produce un fallo en el tacógrafo digital que impida registrar tus actividades de forma adecuada, deberás documentarlas a mano (anotándolas en una hoja aparte o en el reverso del papel de impresión).",
+          "Ponte en contacto con el Dpto. de Tráfico para que te indiquen dónde y cuándo reparar el tacógrafo digital.",
+          "Ejemplo de mensajes (texto mostrado en el dispositivo): Fin de turno / 26.10 00:20 si / ? / 1 pausa! / 1 04h15 h15 / 1 pausa! / 1 04h30 h15"
+        ]
+      },
+      {
+        "t": "07.03 Carga / descarga",
+        "p": [
+          "El modelo de tacógrafo DTCO 4.1 almacena la hora y el lugar del proceso de carga/descarga en el siguiente menú:",
+          "Seleccione entrada vehiculo y selesccione carga,descarga o carga/descarga segun corresponda.",
+          "Complete con el botón OK.",
+          "* Nota: La falta de estos datos está sujeta a sanciones."
+        ]
+      },
+      {
+        "t": "07.04 Cambio de papel de impresora",
+        "p": [
+          "Los informes se imprimen en papel térmico especial.",
+          "Cuando se está acabando el rollo aparecen unas marcas de color en el papel que indican que es el momento de cambiarlo.",
+          "Para cambiar el rollo de papel:",
+          "1) Pulse el botón superior del panel frontal. El panel se abre.",
+          "2) Sujete el borde inferior del panel y extraiga el casete con cuidado.",
+          "3) Introduzca el papel por la parte de atrás de la bandeja de la impresora y muévalo hacia delante, pasando por el borde inferior del panel.",
+          "4) Inserte el papel en la impresora.",
+          "5) Empuje el casete de la impresora hacia el tacógrafo y pulse la parte inferior del panel para cerrar.",
+          "6) Tire del papel hacia arriba y arránquelo.",
+          "IMPRESIÓN DE DATOS.",
+          "1) En el momento de pulsar la tecla se abre el primer menú principal.",
+          "• Al estar insertada en el lector de tarjetas-1 una tarjeta de conductor se visualizará “impresión conductor”.",
+          "• Al estar insertada en el lector de tarjetas-2 una tarjeta de conductor, y estando el lector de tarjetas-1 vacío, se visualizará “impresión conductor 2”.",
+          "• Al no haber ninguna tarjeta de conductor insertada, se visualizará “impresión vehículo”.",
+          "2) El parpadeo de la segunda línea (en letras cursivas) indica que existen más posibilidades a seleccionar. Con las teclas ▲/▼ selecciona el menú principal deseado y confirma la selección con la tecla.",
+          "Si seleccionas la tercera opción (Vehículo), aparecen una serie de funciones seleccionables.",
+          "3) Con las teclas ▲/▼ selecciona la función deseada, por ejemplo, la impresión del documento de “actividad del día”, y se confirma la selección con la tecla.",
+          "4) Con las teclas ▲/▼ selecciona el día deseado, y confirma la selección con la tecla.",
+          "5) Selecciona con las teclas ▲/▼ el tipo de documento de impresión deseado y confirma la selección con la tecla.",
+          "Cuando la impresión se pone en marcha, esperar hasta que finalice completamente.",
+          "Conservar el documento de impresión y protegerlo de la suciedad, de la luz y del sol.",
+          "Para cancelar, se selecciona con las teclas ▲/▼ la opción “si” cuando aparece la siguiente pregunta y se confirma con la tecla; la impresión se interrumpe.",
+          "* Nota: Para que la impresora esté siempre lista, debes llevar dos rollos de papel de reserva en el vehículo.",
+          "Si el papel se acaba mientras se está generando un informe, la impresión se reanudará tras introducir el nuevo rollo."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "titulo": "EQUIPOS DE FRÍO SR",
+    "secciones": [
+      {
+        "t": "08.01 Thermo King A-400 (monotemperatura)",
+        "p": [
+          "Pantalla: muestra set-point, temperatura del compartimento, modo de funcionamiento e indicadores (ej. flecha enfriando).",
+          "Encendido: tecla ENCENDIDO. Apagado: tecla APAGADO. La unidad conserva el último modo configurado.",
+          "Pantalla estándar por defecto si no se selecciona otra función.",
+          "Cambio de set-point: entrar en pantalla SETPOINT, ajustar con flechas arriba/abajo (mantener acelera), confirmar (CONFIRM).",
+          "Mensajes: ‘PROGRAMMING SETPOINT PLEASE WAIT’, ‘SETPOINT CHANGED’ si correcto o ‘SETPOINT NOT CHANGED’ si falla."
+        ]
+      },
+      {
+        "t": "08.02 Carrier Vector 1550 (monotemperatura)",
+        "p": [
+          "Cambio de set-point: ajustar; si no aplica correctamente, aparece ‘SETPOINT NOT CHANGED’.",
+          "Perfiles ‘OPTISET’: seleccionar programas predefinidos desde perfiles y confirmar con botón central.",
+          "Modo automático/manual: alternar (Cycle Sentry vs Cont). Si hay error de iniciación, vuelve a continuo; revisar alarmas y reintentar.",
+          "Cambio diésel ↔ eléctrico: el sistema puede hacerlo automático; si no, conectar alimentación y seleccionar cambio. Para volver a diésel: menú principal → icono motor diésel → aceptar.",
+          "Desescarche: automático; manual solo si unidad en funcionamiento y serpentín del evaporador ≤ 7ºC.",
+          "Alarmas: icono de alarma activa; acceder desde botón central; opciones detalle/volver/borrar.",
+          "Alarmas habituales: 63 falta gasoil; 61 batería baja (pueden acompañarse de 17/20/84)."
+        ]
+      },
+      {
+        "t": "08.03 Carrier Vector HE19MT (bitemperatura)",
+        "p": [
+          "Pantalla: set-point y temperatura por zona, estado de unidad y lecturas.",
+          "Cambiar vista auto scroll ↔ dividida: menú (9) → ‘LANGUAGE/VIEW’ → ‘VIEW’ → confirmar.",
+          "Activar/desactivar compartimento: menú hasta estado; seleccionar C1/C2 con teclas función y modificar set-point.",
+          "Restricción: no se puede apagar C1 y dejar solo C2 encendido.",
+          "Alarmas activas: navegar con flechas; al final ‘FIN LISTA ALARMAS = P/BORRAR’; desactivar con tecla IGUAL cuando se muestre.",
+          "Alarmas habituales: 41 falta gasoil; 16/30/31/35 bajo voltaje batería; 53 informativa; 21 requiere taller; 73 modo eléctrico (cambiar a diésel)."
+        ]
+      },
+      {
+        "t": "08.04 Thermo King Spectrum (bitemperatura)",
+        "p": [
+          "Pantalla: set-point y temperatura por zona, estado de unidad y lecturas del sistema.",
+          "Encender: tecla ENCENDER → ‘Configuring System’ → ‘Diesel Engine Starting’ (o modo eléctrico si conectado). Apagar: tecla APAGADO.",
+          "Zona 1 se enciende con la unidad; zona 2 puede encenderse/apagarse según necesidad.",
+          "Encendido/apagado zona 2: volver a pantalla estándar → tecla ZONA → set-point → ‘Apagar zona/Encender zona’ → confirmar; aparece mensaje de programación y confirma ajuste; en estándar set-point pasa a ‘APAG’.",
+          "Cambiar modo automático/continuo: pantalla estándar → tecla selección de modo → mensaje programación → confirma nuevo modo; icono CYCLE-SENTRY visible/oculto según modo y versión.",
+          "Modificar set-point por zona: pantalla estándar → tecla ZONA → ajustar con +/− → confirmar (SÍ/NO) → pantalla de programación → confirma ‘nuevo set-point’."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "titulo": "TRANSPORTE DE ALIMENTOS",
+    "secciones": [
+      {
+        "t": "09.01 Manipulación de alimentos a temperatura controlada",
+        "p": [
+          "Objetivo: preservar cadena de frío y garantizar calidad, seguridad y salubridad.",
+          "Cadena de frío: conjunto de etapas del proceso de refrigeración; si una se compromete, afecta a todo el sistema.",
+          "El frío conserva: retrasa pérdida de propiedades, degradación y desarrollo de microorganismos.",
+          "Puntos críticos de conservación: cámaras de origen, transporte en vehículo especial y plataforma/centro de venta.",
+          "Intoxicación alimentaria: ingestión de alimentos contaminados; frecuentes por bacterias, virus o parásitos.",
+          "Prevención: prácticas higiénicas correctas y preservación eficiente de la cadena de frío."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "titulo": "TRANSPORTE DE PRODUCTOS – NORMAS DE HIGIENE",
+    "secciones": [
+      {
+        "t": "10.01 Higiene personal y limpieza del vehículo",
+        "p": [
+          "Lavado de manos al inicio de jornada y especialmente tras: uso de inodoro, manipular crudos, toser/estornudar/tocarse boca-nariz, fumar/comer, manipular envases sucios/desechos, tocar dinero/teléfonos/cajas.",
+          "Usar ropa de trabajo limpia."
+        ]
+      },
+      {
+        "t": "10.02 Carga, durante el viaje y descarga",
+        "p": [
+          "Mantener condiciones higiénicas durante toda la operación para minimizar riesgo de contaminación.",
+          "Aplicar prácticas de control coherentes con cadena de frío y requisitos del cliente (termografía/precintos/observaciones si procede)."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "titulo": "DOCUMENTOS DE CONSULTA",
+    "secciones": [
+      {
+        "t": "11.01 Conducción eficiente",
+        "p": [
+          "Iniciar el movimiento con relación de marchas adecuada sin forzar embrague.",
+          "Cambios de marcha rápidos al final de la zona verde (par máximo); mantener motor al inicio de esa zona.",
+          "En subida: aprovechar inercia; a ~1.100 rpm reducir media marcha (trabajar 1.200–1.250 rpm); si subida fuerte, aguantar hasta ~1.000 rpm y bajar marcha entera.",
+          "Saltos de marchas solo en circulación favorable para alcanzar marchas largas antes y reducir consumo; realizar a régimen más alto que cambios convencionales.",
+          "Velocidad uniforme: seleccionar marcha para trabajar en parte baja del rango de par máximo; usar acelerador ~3/4 del recorrido en marchas largas."
+        ]
+      },
+      {
+        "t": "11.02 Tiempos de conducción y descanso",
+        "p": [
+          "Conceptos básicos sobre tiempos de conducción y descanso.",
+          "PERIODO DE CONDUCCIÓN: tiempo de conducción acumulado desde el momento en que un conductor empieza a conducir, tras un período de descanso o una pausa, hasta que toma un período de descanso o pausa. Este período puede ser continuado o interrumpido.",
+          "Conducción diaria: el tiempo diario de conducción no será superior a 9 horas, salvo dos veces a la semana que puede llegar a las 10 horas.",
+          "Conducción semanal: el tiempo de conducción semanal no superará las 56 horas. Se entiende por semana el período comprendido entre las 00:00 del lunes y las 24:00 del domingo.",
+          "Conducción bisemanal: el tiempo de conducción en dos semanas consecutivas no puede exceder de 90 horas. Si en una semana se conduce el máximo de 56 horas, en la siguiente solo podrán conducirse 34 horas.",
+          "PAUSAS: tras un período de conducción de 4 horas y 30 minutos, el conductor hará una pausa ininterrumpida de al menos 45 minutos, a menos que tome un período de descanso.",
+          "La pausa de 45 minutos se puede sustituir por una pausa de al menos 15 minutos, seguida de otra pausa de al menos 30 minutos, intercaladas en el período de conducción.",
+          "IMPORTANTE: si la primera fracción es inferior a 15 minutos, o la segunda es inferior a 30 minutos, no computarán como pausa.",
+          "TIEMPOS DE DESCANSO:",
+          "Descanso diario normal: en cada período de 24 horas (cada día de conducción), el conductor deberá descansar 11 horas consecutivas.",
+          "El descanso diario normal puede fraccionarse en dos períodos: el primero de al menos 3 horas ininterrumpidas y el segundo de al menos 9 horas ininterrumpidas. En este caso, el descanso diario será de al menos 12 horas.",
+          "Descanso diario reducido: cualquier período de descanso de al menos 9 horas, pero inferior a 11 horas. Se puede reducir como máximo 3 veces por semana.",
+          "Descanso semanal: período durante el cual el conductor puede disponer libremente de su tiempo, ya sea un período de descanso semanal normal o reducido.",
+          "Período de descanso semanal normal: cualquier período de descanso de al menos 45 horas. Cada 6 días de conducción se debe tomar un descanso de 45 horas ininterrumpidas.",
+          "Período de descanso semanal reducido: cualquier período de descanso inferior a 45 horas que se puede reducir hasta un mínimo de 24 horas consecutivas.",
+          "En el transcurso de dos semanas consecutivas el conductor deberá tomar al menos:",
+          "a) dos períodos de descanso semanal normal, o",
+          "b) un período de descanso semanal normal y un período de descanso semanal reducido de al menos 24 horas; no obstante, la reducción se compensará entre las 3 semanas siguientes al período reducido.",
+          "IMPORTANTE: un período de descanso diario puede ampliarse para transformarse en un período de descanso semanal normal o reducido. Es decir, el conductor puede ampliar las 11 horas a 45 horas (descanso semanal normal) o a 24 horas (descanso semanal reducido).",
+          "CONDUCCIÓN Y DESCANSOS EN EQUIPO:",
+          "La jornada de trabajo para un equipo de dos conductores es de 30 horas.",
+          "Dentro de esas 30 horas, los conductores deberán tomar un período de descanso de al menos 9 horas.",
+          "Los períodos de conducción diarios para cada conductor serán de 9 horas (18 horas de conducción total en la jornada). Al igual que en la conducción individual, se podrán aumentar a 10 horas como máximo 2 jornadas en una semana.",
+          "PAUSA DE 45 MINUTOS EN CONDUCCIÓN CONTINUADA: en conducción en equipo, mientras un conductor está conduciendo, el otro se encuentra en modo Disponibilidad.",
+          "En estos casos, un período de 45 minutos del período de disponibilidad del segundo conductor podrá considerarse como pausa.",
+          "Durante la primera hora de conducción en equipo, la presencia del segundo conductor es optativa; durante el resto del período es obligatoria."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "titulo": "MANUAL DE LA TABLET",
+    "secciones": [
+      {
+        "t": "12.01 Login",
+        "p": [
+          "Acceso a la Tablet mediante contraseña operativa indicada en el manual.",
+          "Contraseña: a12345."
+        ]
+      },
+      {
+        "t": "12.02 Tareas",
+        "p": [
+          "Pantalla de Tareas dividida en: Datos de interés, Temperaturas y Órdenes de Transporte.",
+          "Botón para forzar actualización de datos y botón para solicitar asistencia al equipo.",
+          "Datos de interés: Titular, Ayudante, matrícula UT y matrícula SR enganchado.",
+          "Si algún dato no coincide con la realidad, contactar con el equipo.",
+          "Órdenes: Asignadas; Finalizadas con Documentación Pendiente; Finalizadas.",
+          "Marcadores por orden: ADR, Temperatura, Bitemperatura, Termografía, Preenfriado, Intercambio de Pallets, Precinto, Aduana o Parking vigilado.",
+          "Al entrar en una orden: visualizar tareas; marcar ‘Entendido’ o solicitar asistencia."
+        ]
+      },
+      {
+        "t": "12.03 Navegación",
+        "p": [
+          "Usar navegación interna para acceder a órdenes, tareas y documentación asociada.",
+          "No posponer registros; completar inmediatamente tras la tarea."
+        ]
+      },
+      {
+        "t": "12.04 Documentación de las tareas",
+        "p": [
+          "Cuestionarios pueden aparecer pre-marcados ‘sin incidencias’ para agilizar, sin eliminar obligación de revisión exhaustiva.",
+          "Si se indica incidencia, se ofrece opción de enviar solicitud de asistencia.",
+          "Pulsar ‘Finalizar’ guarda el cuestionario y no permite modificar: completar justo después de la tarea y revisar datos introducidos."
+        ]
+      },
+      {
+        "t": "12.05 Subtarea Checklist Reino Unido",
+        "p": [
+          "Aplicable a viajes con destino UK (incluye puertos europeos y Eurotúnel).",
+          "Objetivo: reducir riesgo de entrada con inmigrantes ilegales.",
+          "Acciones: usar dispositivos de seguridad (candado, precinto, etc.).",
+          "No realizar paradas en aparcamientos no seguros a 150 km del Eurotúnel de Calais.",
+          "Realizar comprobaciones de seguridad en cada parada.",
+          "Si se sospecha presencia de alguien en el vehículo: avisar al Operador de Tráfico.",
+          "Para paradas no contempladas en orden (descansos): usar ‘Añadir parada’ (GB-PDF); se registra fecha/hora/lugar antes de retomar marcha.",
+          "Botones permiten consultar progreso del checklist en formato oficial (si lo requieren autoridades aduaneras).",
+          "Activación: se activa en la primera tarea de CARGA con destino Reino Unido.",
+          "Ubicación de la subtarea: siempre será la última subtarea antes de retomar la marcha.",
+          "Condición de fin: se completa al rellenar la columna correspondiente a la última descarga en Reino Unido.",
+          "Persistencia: habrá subtarea de checklist para toda tarea entre la primera carga y la última descarga.",
+          "Regla Ferry: en tareas de ferry existen dos checklists obligatorios.",
+          "Ferry (1): primera subtarea (antes de subir al barco).",
+          "Ferry (2): última subtarea (tras bajar del barco).",
+          "GB-PDF: botón en esquina superior derecha.",
+          "GB-PDF: visible pero inactivo hasta rellenar el primer checklist.",
+          "GB-PDF: permite visualizar el checklist oficial compilado en PDF.",
+          "GB-PDF: idiomas soportados: ESPAÑOL, ENGLISH, FRANÇAIS, ROMÂNA.",
+          "Añadir parada: opción dentro del menú GB-PDF.",
+          "Añadir parada: genera un nuevo cuestionario en blanco para paradas sin tarea asociada.",
+          "Paradas manuales: permite añadir paradas no planificadas (ej. descansos).",
+          "Paradas manuales: si se introduce fecha/hora anterior, la columna se reordena cronológicamente.",
+          "Campos (cabecera) — Nº parada: autocompletado secuencial.",
+          "Campos (cabecera) — Fecha/hora: por defecto, momento de apertura de pantalla (modificable).",
+          "Campos (cabecera) — Lugar: por defecto, ubicación de la tarea actual (modificable).",
+          "Campos (cabecera) — Nº precinto: obligatorio si no se ha hecho en un checklist anterior; heredado si existe.",
+          "Cuestionario: las preguntas vienen pre-marcadas con la respuesta correcta por defecto.",
+          "1) ¿Comprobó que el espacio de carga está efectivamente protegido contra el acceso no autorizado? (Sí).",
+          "2) ¿Comprobó que la carga está efectivamente asegurada contra el acceso no autorizado (si procede)? (Sí).",
+          "3) ¿Comprobó si todas las cerraduras, sellos y otros dispositivos de seguridad tienen indicios de manipulación, daños y reparación o reemplazo no autorizados? (Sí).",
+          "4) ¿Comprobó si los cables y correas TIR y los ojales relacionados tienen indicios de manipulación, daños o indicios de reparación o reemplazo no autorizados (si procede)? (Sí). Nota: exclusiva semirremolques lona; 'Sí' automático si Tráfico lo tipifica así.",
+          "5) ¿Comprobó si la cubierta exterior o la cubierta de tela fueron revisadas en busca de indicios de acceso no autorizado (si procede)? (Sí). Nota: exclusiva semirremolques lona.",
+          "6) ¿Comprobó todos los compartimentos de almacenamiento externos en busca de indicios de acceso no autorizado? (Sí).",
+          "7) ¿Comprobó si los deflectores de viento tienen indicios de acceso no autorizado? (Sí).",
+          "8) ¿Comprobó debajo del vehículo si hay indicios de acceso no autorizado? (Sí).",
+          "9) ¿Comprobó si en el interior del vehículo hay indicios de acceso no autorizado? (Sí).",
+          "10) ¿Comprobó el techo del vehículo desde su interior en busca de indicios de acceso no autorizado? (Sí).",
+          "11) ¿Comprobó que ninguna persona haya obtenido acceso no autorizado? (Sí).",
+          "12) ¿Comprobó que toda la documentación necesaria es correcta? (Sí).",
+          "13) ¿Observó algún indicio de que una persona haya obtenido, o haya intentado obtener, acceso no autorizado al vehículo? (No).",
+          "14) Aval de un tercero que haya llevado a cabo los controles anteriores (si procede). (No)."
+        ]
+      },
+      {
+        "t": "12.06 Mensajes en Tablet",
+        "p": [
+          "La función Mensajes de la Tablet es el canal oficial de comunicación escrita entre el conductor y los gestores de pedidos.",
+          "Desde el MENÚ PRINCIPAL, accede al apartado Mensajes para consultar y enviar comunicaciones relacionadas con los servicios asignados.",
+          "En el panel de Mensajes encontrarás dos bandejas: Recibidos, donde se muestran los mensajes enviados por los gestores, y Enviados, donde se almacenan los mensajes que tú has remitido.",
+          "Para leer un mensaje recibido, accede a la bandeja Recibidos y pulsa sobre el mensaje correspondiente. El contenido se mostrará en pantalla con fecha y hora.",
+          "Para enviar un mensaje, accede al apartado Mensajes y selecciona la opción de redacción +.",
+          "Escribe el texto del mensaje en el cuadro destinado a la escritura, utilizando un lenguaje claro, directo y operativo.",
+          "Una vez redactado el mensaje, presiona el botón de envío situado a la derecha del cuadro de texto para que el mensaje sea enviado correctamente al gestor.",
+          "Tras el envío, el mensaje quedará registrado automáticamente en la bandeja Enviados como comprobante de la comunicación.",
+          "Este canal debe utilizarse para aclaraciones operativas, incidencias del servicio, documentación pendiente o cualquier comunicación relacionada con el viaje.",
+          "No se debe utilizar el sistema de mensajes para comunicaciones ajenas al servicio o de carácter personal."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "titulo": "SISTEMA DE GESTIÓN",
+    "secciones": [
+      {
+        "t": "13.01 Política de calidad y medio ambiente",
+        "p": [
+          "Principios del sistema: calidad, seguridad, higiene y salud en el trabajo, medio ambiente y seguridad alimentaria.",
+          "Misión: satisfacción total del cliente.",
+          "Ejes: detectar y satisfacer necesidades; superar expectativas innovando; gestionar mejor que competidores; liderazgo.",
+          "Compromiso: mejora continua mediante objetivos claros/medibles, seguimiento de procesos y desarrollo de capacidades con medios necesarios."
+        ]
+      }
+    ]
+  }
+]
+

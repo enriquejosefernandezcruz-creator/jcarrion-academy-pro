@@ -1,0 +1,33 @@
+id,pais,red,nombre,status,instrucciones
+ES-01,España,SOLRED,"Repsol ELS HOSTALETS (Llers)",ok,"LLENAR al entrar y salir de España. Salida 3 AP-7."
+ES-02,España,SOLRED,"Repsol CIM VALLÉS (Sta. Perpetua)",condicionado,"Excepcionalmente, llenar depósito en viajes R y R+ que no puedan esperar en Hostalets."
+ES-03,España,CEPSA,"Cepsa NUEVA FRAGA",ok,"LLENAR la UP nacional; y para viajes que salgan por Viella."
+ES-04,España,SOLRED,"Repsol LOPIDANA (Álava)",ok,"LLENAR al entrar y salir de España. N-1 km 350."
+ES-05,España,SOLRED,"Repsol ZAISA III (Irún)",ok,"LLENAR cuando la ruta pase por Pamplona o en retornos a Cantabria, Galicia, Vizcaya."
+ES-06,España,SOLRED,"Repsol GUARROMÁN (Jaén)",ok,"LLENAR depósito en retornos que pasan por Guarromán."
+
+FR-01,Francia,AS24,"AS24 CALAIS TRANSMARCK",condicionado,"Retorno: Solo si imposible en España. Llenar para llegar a PREFERENTE."
+FR-02,Francia,IDS,"IDS BEAUNE",condicionado,"Repostar lo suficiente para llegar a preferente (retorno)."
+FR-03,Francia,IDS,"IDS LIMALONGES (RN10)",condicionado,"Repostar lo suficiente para llegar a preferente (retorno). N10."
+FR-04,Francia,AS24,"AS24 LIMOGES (Centre Routier)",condicionado,"Repostar lo suficiente para llegar a preferente (retorno). A20 Salida 28."
+FR-05,Francia,AS24,"AS24 ANGOULEME ROULLET",condicionado,"Repostar lo suficiente para llegar a preferente (retorno). N10."
+FR-06,Francia,AS24,"AS24 BRIGNOLES",condicionado,"Repostar lo suficiente para llegar a preferente (retorno). Zona Nicopolis."
+FR-07,Francia,AS24,"AS24 COLMAR",condicionado,"Repostar lo suficiente para llegar a preferente (retorno). Zona Industrial."
+
+BE-01,Bélgica,IDS,"IDS HERSTAL",ok,"LLENADO en caso de viaje hacia Escandinavia al salir por Irún."
+BE-02,Bélgica,AS24,"AS24 TOTAL REKKEM (Menen)",condicionado,"Repostar lo suficiente en caso de retorno hacia España desde Gran Bretaña."
+
+LU-01,Luxemburgo,IDS,"ESSO LEUDELANGE (IDS)",ok,"LLENADO en caso de subida hacia Escandinavia al salir por Barcelona."
+HR-01,Croacia,AS24,"AS24 DRAGALIC PETROL",ok,"OBLIGADO LLENAR en caso de retornar a España. A3."
+IT-01,Italia,IDS,"Q8 TREVISO CESSALTO",ok,"Repostar 400 LITROS en retorno (si no llenó en Croacia). A4."
+IT-02,Italia,IDS,"Q8 BRESCIA CASTENEDOLO",ok,"Repostar 350 LITROS en caso de retornar a España. A4."
+IT-03,Italia,AS24,"AS24 PONTEBBA",ok,"Repostar 400 LITROS en caso de retornos desde AUSTRIA."
+IT-04,Italia,IDS,"Q8 BELFORTE MONFERRATO",ok,"Repostar 250 LITROS en caso de retornar a España. A26."
+
+RO-01,Rumanía,AS24,"AS24 PECICA",ok,"Repostar 200 LITROS retorno desde zonas no Baia Mare hasta llegar a Croacia."
+RO-02,Rumanía,IDS,"SMART DIESEL ORADEA",ok,"Repostar 350 LITROS retorno desde zona Baia Mare hasta llegar a Italia."
+BG-01,Bulgaria,AS24,"SOFIA EKO (AS24)",ok,"350L. Descarga Ravno Pole + Cabile: solo antes de descarga si transit time permite."
+
+PL-01,Polonia,IDS,"IDS MOSTKI",ok,"OBLIGADO LLENAR para retornar. DK92."
+PL-02,Polonia,IDS,"KATY WROCLAWSKIE CITRONEX",ok,"OBLIGADO LLENAR para retornar. A4."
+PL-03,Polonia,IDS,"Q8 SZCZECIN-RADZISZEWO",ok,"OBLIGADO LLENAR para retornar. S3."
