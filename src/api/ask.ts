@@ -2,11 +2,14 @@
 import { getStoredToken } from "../components/AccessGate";
 
 export type AskRoute = "manual" | "gasolineras" | "ambigua";
+export type Lang = "es" | "pt" | "ro" | "ar";
 
 export type AskResponse = {
   answer: string;
   route?: AskRoute;
   hits?: any[];
+  lang?: Lang;        // opcional (útil para UI)
+  answer_es?: string; // opcional (solo debug)
 };
 
 type AskError = {
@@ -37,13 +40,16 @@ function tryParseJson(text: string): any | undefined {
   }
 }
 
-export async function ask(question: string): Promise<AskResponse> {
+/**
+ * ask(question, lang?)
+ * - lang fuerza el idioma de salida en backend ("es" | "pt" | "ro" | "ar")
+ */
+export async function ask(question: string, lang?: Lang): Promise<AskResponse> {
   const q = String(question ?? "").trim();
   if (!q) throw new Error("La pregunta está vacía.");
 
   const url = envOrThrow("VITE_API_URL");
 
-  // Token por usuario (login en frontend)
   const token = getStoredToken();
   if (!token) {
     const err: AskError = { message: "No hay token de acceso. Inicia sesión." };
@@ -58,7 +64,10 @@ export async function ask(question: string): Promise<AskResponse> {
         "content-type": "application/json",
         "x-app-token": token,
       },
-      body: JSON.stringify({ question: q }),
+      body: JSON.stringify({
+        question: q,
+        ...(lang ? { lang } : {}),
+      }),
     });
   } catch (e: any) {
     const err: AskError = { message: "Error de red al contactar con la API.", details: e };
@@ -91,6 +100,8 @@ export async function ask(question: string): Promise<AskResponse> {
     answer: data.answer,
     route: data.route,
     hits: Array.isArray(data.hits) ? data.hits : undefined,
+    lang: data.lang as Lang | undefined,
+    answer_es: typeof (data as any).answer_es === "string" ? (data as any).answer_es : undefined,
   };
 }
 
