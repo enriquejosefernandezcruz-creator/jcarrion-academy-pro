@@ -21,6 +21,34 @@ type SeccionApp = "manual" | "recursos";
 const URL_MAPA_OFICIAL =
   "https://www.google.com/maps/d/viewer?mid=1vX6A0pI_k_uGkS1Uf0vE-9zL";
 
+function normalizeForRefsCheck(s: string): string {
+  return (s ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function answerContainsRefsBlock(answer: string): boolean {
+  const t = normalizeForRefsCheck(answer);
+
+  // Detecta encabezados típicos en ES/PT/RO/AR/EN (robusto a tildes/diacríticos)
+  return (
+    t.includes("\nreferencias") ||
+    t.includes("referencias:") ||
+    t.includes("\nreferencias:") ||
+    t.includes("\nreferencias\n") ||
+    t.includes("\nreferencias ") ||
+    t.includes("\nreferinte") || // RO sin diacríticos
+    t.includes("referinte:") ||
+    t.includes("\nreferinte:") ||
+    t.includes("\nreferencias") || // PT/ES comparten
+    t.includes("referencias:") ||
+    t.includes("\nreferences") ||
+    t.includes("references:") ||
+    t.includes("المراجع") // AR
+  );
+}
+
 export default function App() {
   const [seccion, setSeccion] = useState<SeccionApp>("manual");
   const [idx, setIdx] = useState(0);
@@ -125,6 +153,11 @@ export default function App() {
 
   const hits = qa?.hits ?? [];
 
+  // Si la respuesta ya trae un bloque de referencias, no duplicamos en UI
+  const answerHasRefs = useMemo(() => {
+    return answerContainsRefsBlock(qa?.answer ?? "");
+  }, [qa?.answer]);
+
   // --- REFERENCIAS (presentación limpia, sin JSON crudo, sin score en UI) ---
   const formattedRefs = useMemo(() => {
     if (!Array.isArray(hits)) return [];
@@ -178,17 +211,6 @@ export default function App() {
     // Limitar para UX
     return deduped.slice(0, 6);
   }, [hits]);
-
-  // Si la respuesta ya trae un bloque de referencias, no duplicamos en UI
-  const answerHasRefs = useMemo(() => {
-    const text = (qa?.answer ?? "").toLowerCase();
-    return (
-      text.includes("referencias") ||
-      text.includes("referințe") ||
-      text.includes("المراجع") ||
-      text.includes("references")
-    );
-  }, [qa?.answer]);
 
   return (
     <AccessGate>
@@ -381,7 +403,7 @@ export default function App() {
                     >
                       <AnswerPanel lang={qLang} answer={qa.answer} />
 
-                      {/* Referencias UI (solo si la respuesta NO trae ya su propio bloque de referencias) */}
+                      {/* Referencias UI: SOLO si el answer NO trae ya su bloque de referencias */}
                       {formattedRefs.length > 0 && !answerHasRefs && (
                         <div style={{ marginTop: 12, borderTop: "1px solid #27272a", paddingTop: 10 }}>
                           <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: 6 }}>
@@ -597,6 +619,7 @@ export default function App() {
     </AccessGate>
   );
 }
+
 
 
 
