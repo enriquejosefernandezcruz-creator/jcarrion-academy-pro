@@ -1,0 +1,17 @@
+name = "jcarrion-academy-pro-api"
+main = "src/index.ts"
+compatibility_date = "2024-02-12"
+
+# ⚠️ CORRECCIÓN CRÍTICA: Apuntamos al índice real que existe en tu cuenta
+[[vectorize]]
+binding = "VECTOR_INDEX"       # Esto NO se cambia (es como lo llama tu código)
+index_name = "manual-index"    # <--- AQUÍ ESTABA EL ERROR
+
+[ai]
+binding = "AI"
+# ... (mantén lo que ya tienes arriba: name, main, vectorize, ai) ...
+
+# ⚠️ MIGRACIÓN: Autorizamos borrar la clase antigua "AccessControlDO"
+[[migrations]]
+tag = "v1-delete-legacy-do" 
+deleted_classes = ["AccessControlDO"]
