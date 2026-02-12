@@ -8,8 +8,8 @@ export type AskResponse = {
   answer: string;
   route?: AskRoute;
   hits?: any[];
-  lang?: Lang;        // opcional (útil para UI)
-  answer_es?: string; // opcional (solo debug)
+  lang?: Lang;
+  answer_es?: string;
 };
 
 type AskError = {
@@ -41,20 +41,75 @@ function tryParseJson(text: string): any | undefined {
 }
 
 /**
- * ask(question, lang?)
- * - lang fuerza el idioma de salida en backend ("es" | "pt" | "ro" | "ar")
+ * Detecta idioma por CONTENIDO de la pregunta (no por idioma del teléfono).
+ * Esto evita que un usuario con móvil en ES reciba respuestas en ES al preguntar en RO/PT/AR.
  */
-export async function ask(question: string, lang?: Lang): Promise<AskResponse> {
+function detectLangFromText(q: string): Lang {
+  const s = String(q ?? "").trim();
+  if (!s) return "es";
+
+  // AR
+  if (/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/.test(s)) return "ar";
+
+  const lower = s.toLowerCase();
+
+  // RO con diacríticos
+  if (/[ăâîșşțţ]/i.test(lower)) return "ro";
+
+  // PT con diacríticos o tokens frecuentes
+  if (
+    /[ãõç]/i.test(lower) ||
+    /\b(o que|você|voce|vocês|nao|não|pra|tá|tô|está|estão|por favor|obrigado|obrigada)\b/i.test(lower) ||
+    /\b(viagem|durante|multa|multado|multada|estrada|rota|faço|fazer|recebi|receber)\b/i.test(lower)
+  ) {
+    return "pt";
+  }
+
+  // Señales RO sin diacríticos (caso común en teclado ES)
+  const norm = ` ${lower
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()} `;
+
+  const roSignals = [
+    " care ",
+    " este ",
+    " dupa ",
+    " cat ",
+    " timp ",
+    " saptamanal ",
+    " pauza ",
+    " minute ",
+    " sofer ",
+    " conducere ",
+    " obligatoriu ",
+    " numarul ",
+    " maxim ",
+  ];
+
+  const roHits = roSignals.reduce((acc, t) => acc + (norm.includes(t) ? 1 : 0), 0);
+  if (roHits >= 2) return "ro";
+
+  return "es";
+}
+
+export async function ask(question: string): Promise<AskResponse> {
   const q = String(question ?? "").trim();
   if (!q) throw new Error("La pregunta está vacía.");
 
   const url = envOrThrow("VITE_API_URL");
 
+  // Token por usuario (login en frontend)
   const token = getStoredToken();
   if (!token) {
     const err: AskError = { message: "No hay token de acceso. Inicia sesión." };
     throw err;
   }
+
+  // NUEVO: idioma por texto (no por idioma del navegador)
+  const lang = detectLangFromText(q);
 
   let res: Response;
   try {
@@ -66,7 +121,8 @@ export async function ask(question: string, lang?: Lang): Promise<AskResponse> {
       },
       body: JSON.stringify({
         question: q,
-        ...(lang ? { lang } : {}),
+        lang,
+        debug: false,
       }),
     });
   } catch (e: any) {
@@ -104,4 +160,6 @@ export async function ask(question: string, lang?: Lang): Promise<AskResponse> {
     answer_es: typeof (data as any).answer_es === "string" ? (data as any).answer_es : undefined,
   };
 }
+
+
 
