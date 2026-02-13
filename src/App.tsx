@@ -1,5 +1,5 @@
 // ==============================
-// FILE: src/App.tsx (GOLDEN BASELINE V18 - SMART REFS + CLEAN UI)
+// FILE: src/App.tsx (GOLDEN BASELINE V25 - HITS PROP + CLEAN FALLBACK)
 // ==============================
 import { useCallback, useMemo, useRef, useState } from "react";
 
@@ -41,8 +41,6 @@ function answerContainsRefsBlock(answer: string): boolean {
     t.includes("\nreferinte") || // RO sin diacríticos
     t.includes("referinte:") ||
     t.includes("\nreferinte:") ||
-    t.includes("\nreferencias") || // PT/ES comparten
-    t.includes("referencias:") ||
     t.includes("\nreferences") ||
     t.includes("references:") ||
     t.includes("المراجع") // AR
@@ -158,19 +156,20 @@ export default function App() {
     return answerContainsRefsBlock(qa?.answer ?? "");
   }, [qa?.answer]);
 
-  // --- REFERENCIAS (OPTIMIZADO V18: Metadata Priority) ---
+  // --- REFERENCIAS (LEGACY FALLBACK, SOLO SI NO HAY HITS) ---
   const formattedRefs = useMemo(() => {
-    if (!Array.isArray(hits)) return [];
+    if (!Array.isArray(hits) || hits.length === 0) return [];
 
     const norm = hits
       .map((h: any) => {
-        // 1. Extracción Jerárquica de Título
-        // Prioridad: Metadata del Worker > Título Legacy > ID Crudo
-        const tituloLimpio = String(h?.metadata?.title || h?.moduloTitulo || h?.title || "").trim();
-        const seccion = String(h?.seccionTitulo || "").trim();
-        const idFallback = String(h?.id || h?.ref || "Ref");
+        const meta = h?.metadata || {};
+        const tituloLimpio = String(
+          meta.title || meta.source || h?.moduloTitulo || h?.title || ""
+        ).trim();
 
-        // 2. Score (solo para ordenar internamente)
+        const seccion = String(h?.seccionTitulo || "").trim();
+        const idFallback = String(h?.id || h?.ref || "Ref").trim();
+
         const score =
           typeof h?.score === "number"
             ? h.score
@@ -178,27 +177,14 @@ export default function App() {
             ? Number(h.score)
             : 0;
 
-        // 3. Construcción de Etiqueta Profesional
-        let label = tituloLimpio;
-        
-        // Si no hay título limpio, usamos el ID, pero formateado si es posible
-        if (!label) {
-            label = idFallback;
-        }
+        let label = tituloLimpio || idFallback;
+        if (seccion && !label.includes(seccion)) label += ` — ${seccion}`;
 
-        // Añadir sección si existe y no es redundante
-        if (seccion && !label.includes(seccion)) {
-            label += ` — ${seccion}`;
-        }
-
-        // 4. Clave única robusta
         const key = `${label}__${idFallback}`.toLowerCase();
-
         return { key, label, score };
       })
-      .filter((x) => !!x.label);
+      .filter((x: any) => !!x.label && x.label !== "undefined");
 
-    // Dedup por clave
     const seen = new Set<string>();
     const deduped: Array<{ key: string; label: string; score?: number }> = [];
     for (const r of norm) {
@@ -207,12 +193,11 @@ export default function App() {
       deduped.push(r);
     }
 
-    // Orden por score desc (si existe), pero NO se muestra
     deduped.sort((a, b) => (b.score ?? -Infinity) - (a.score ?? -Infinity));
-
-    // Limitar para UX
     return deduped.slice(0, 5);
   }, [hits]);
+
+  const hasHits = Array.isArray(qa?.hits) && (qa?.hits?.length ?? 0) > 0;
 
   return (
     <AccessGate>
@@ -281,9 +266,7 @@ export default function App() {
             <div style={{ display: "flex", gap: "1rem" }}>
               <input
                 type="text"
-                placeholder={
-                  seccion === "manual" ? "Buscar normativa..." : "Buscar por país, estación o instrucción..."
-                }
+                placeholder={seccion === "manual" ? "Buscar normativa..." : "Buscar por país, estación o instrucción..."}
                 value={busqueda}
                 onChange={(e) => {
                   setBusqueda(e.target.value);
@@ -369,7 +352,6 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* UX mínima obligatoria */}
                 <div ref={answerRef}>
                   {loadingQA && (
                     <div style={{ marginTop: 12, fontSize: "0.9rem", color: "#a1a1aa" }}>
@@ -403,10 +385,11 @@ export default function App() {
                         border: "1px solid #27272a",
                       }}
                     >
-                      <AnswerPanel lang={qLang} answer={qa.answer} />
+                      {/* V25: AnswerPanel recibe hits y pinta title real desde metadata */}
+                      <AnswerPanel lang={qLang} answer={qa.answer} hits={qa.hits} />
 
-                      {/* Referencias UI: SOLO si el answer NO trae ya su bloque de referencias */}
-                      {formattedRefs.length > 0 && !answerHasRefs && (
+                      {/* Fallback: solo si NO hay hits (compatibilidad con respuestas antiguas) y la respuesta no trae refs */}
+                      {formattedRefs.length > 0 && !answerHasRefs && !hasHits && (
                         <div style={{ marginTop: 12, borderTop: "1px solid #27272a", paddingTop: 10 }}>
                           <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: 6 }}>
                             Referencias
@@ -495,11 +478,7 @@ export default function App() {
                 }}
               >
                 <div style={{ background: "white", padding: "10px", borderRadius: "8px" }}>
-                  <img
-                    src={qrMapa}
-                    alt="QR Mapa"
-                    style={{ width: "160px", height: "160px", objectFit: "contain" }}
-                  />
+                  <img src={qrMapa} alt="QR Mapa" style={{ width: "160px", height: "160px", objectFit: "contain" }} />
                 </div>
 
                 <div style={{ maxWidth: "400px", textAlign: "left" }}>
@@ -549,7 +528,6 @@ export default function App() {
                       position: "relative",
                     }}
                   >
-                    {/* Cabecera Tarjeta */}
                     <div
                       style={{
                         display: "flex",
@@ -570,9 +548,7 @@ export default function App() {
                             borderRadius: "4px",
                             background: g.status === "ok" ? "rgba(32,201,151,0.1)" : "rgba(245,159,0,0.1)",
                             color: g.status === "ok" ? "#20c997" : "#f59f00",
-                            border: `1px solid ${
-                              g.status === "ok" ? "rgba(32,201,151,0.2)" : "rgba(245,159,0,0.2)"
-                            }`,
+                            border: `1px solid ${g.status === "ok" ? "rgba(32,201,151,0.2)" : "rgba(245,159,0,0.2)"}`,
                           }}
                         >
                           {g.status === "ok" ? "OBLIGADO" : "CONDICIONADO"}
@@ -595,7 +571,6 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* Cuerpo Tarjeta */}
                     <h4 style={{ margin: "0 0 0.5rem 0", color: "#fff", fontSize: "1.1rem" }}>{g.nombre}</h4>
 
                     <div
