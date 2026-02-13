@@ -1,15 +1,16 @@
-import type { Env } from "../index"; // <--- USO DE "import type" (SOLUCIÓN ERROR ROJO)
+import { Env } from "../index";
 import { openaiChat } from "./openai";
-import { GASOLINERAS } from "../../packages/data/gasolineras";
+import { GASOLINERAS } from "../../../../packages/data/gasolineras";
 
 interface VectorMatch {
   metadata?: { text?: string; type?: string };
 }
 
 export async function answerFromGasolineras(
-  apiKey: string, 
+  apiKey: string,  // <--- AHORA ACEPTA LA API KEY
   questionES: string, 
-  env: Env
+  env: Env, 
+  opts?: { debug?: boolean }
 ) {
   // 1. Normalización para búsqueda local (Coste 0)
   const query = questionES.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
@@ -58,9 +59,4 @@ export async function answerFromGasolineras(
 
   return { answer, hits: matches.matches };
 }
-
-
-
-
-
 

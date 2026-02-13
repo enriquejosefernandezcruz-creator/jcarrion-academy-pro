@@ -8,8 +8,9 @@ import AccessGate from "./components/AccessGate";
 import { detectLangInfo } from "./rag/lang";
 import { ask, type AskResponse } from "./api/ask";
 
-import { DATA } from "./data/manualV16";
-import { GASOLINERAS } from "./data/gasolineras";
+import { DATA } from "../packages/data/manualV16";
+import { GASOLINERAS } from "../packages/data/gasolineras";
+
 
 import { QuestionInput } from "./components/QuestionInput";
 import { AnswerPanel } from "./components/AnswerPanel";

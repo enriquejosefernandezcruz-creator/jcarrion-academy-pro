@@ -1,9 +1,8 @@
-// src/rag/gasolinerasIndex.ts
-import { GASOLINERAS } from "../../packages/data/gasolineras";
+// worker/src/rag/gasolinerasIndex.ts
+import { GASOLINERAS } from "../../../../packages/data/gasolineras";
 
 export type GasStatus = "ok" | "condicionado";
 
-// Tipado compatible con "as const" (readonly profundo)
 export type Gasolinera = Readonly<{
   id: string;
   pais: string;
@@ -56,23 +55,22 @@ const NETWORK_ALIASES: Record<string, string> = {
   as24: "AS24",
   ids: "IDS",
   solred: "SOLRED",
-  repsol: "SOLRED", // en tu CSV "red" parece SOLRED
+  repsol: "SOLRED",
   esso: "ESSO",
   q8: "Q8",
 };
 
 export type GasFilters = {
-  country?: string; // canonical (p.ej. "Francia")
+  country?: string;
   status?: GasStatus;
-  network?: string; // canonical (p.ej. "AS24")
-  freeText?: string; // resto de query
+  network?: string;
+  freeText?: string;
 };
 
 export function parseGasFilters(question: string): GasFilters {
   const qNorm = normalize(question);
   const tokens = tokenize(question);
 
-  // País
   let country: string | undefined;
   for (const t of tokens) {
     const c = COUNTRY_ALIASES[t];
@@ -82,12 +80,10 @@ export function parseGasFilters(question: string): GasFilters {
     }
   }
 
-  // Status
   let status: GasStatus | undefined;
   if (qNorm.includes("obligado") || qNorm.includes("obligatorio")) status = "ok";
   else if (qNorm.includes("condicionado")) status = "condicionado";
 
-  // Red
   let network: string | undefined;
   for (const t of tokens) {
     const n = NETWORK_ALIASES[t];
@@ -97,39 +93,13 @@ export function parseGasFilters(question: string): GasFilters {
     }
   }
 
-  // freeText (simple)
   const stop = new Set<string>([
     ...Object.keys(COUNTRY_ALIASES),
     ...Object.keys(NETWORK_ALIASES),
-    "donde",
-    "dónde",
-    "puedo",
-    "repostar",
-    "repostaje",
-    "gasolinera",
-    "estacion",
-    "estación",
-    "llenar",
-    "combustible",
-    "diesel",
-    "gasoil",
-    "deposito",
-    "depósito",
-    "litros",
-    "obligado",
-    "obligatorio",
-    "condicionado",
-    "en",
-    "de",
-    "la",
-    "el",
-    "los",
-    "las",
-    "un",
-    "una",
-    "y",
-    "o",
-    "para",
+    "donde","dónde","puedo","repostar","repostaje","gasolinera","estacion","estación",
+    "llenar","combustible","diesel","gasoil","deposito","depósito","litros",
+    "obligado","obligatorio","condicionado",
+    "en","de","la","el","los","las","un","una","y","o","para",
   ]);
 
   const freeTokens = tokens.filter((t) => !stop.has(t));
@@ -154,7 +124,6 @@ function scoreGas(row: Gasolinera, qTokens: string[], qNorm: string): number {
   }
 
   if (qNorm && hay.includes(qNorm)) score += 8;
-
   return score;
 }
 
@@ -179,19 +148,13 @@ export function filterGasolineras(question: string): Gasolinera[] {
 
   const norm = (s: string) => s.trim().toLowerCase();
 
-  if (filters.country) {
-    list = list.filter((g) => g.pais === filters.country);
-  }
+  if (filters.country) list = list.filter((g) => g.pais === filters.country);
 
-  if (filters.status) {
-    list = list.filter((g) => norm(g.status) === filters.status);
-  }
+  if (filters.status) list = list.filter((g) => norm(g.status) === filters.status);
 
   if (filters.network) {
     const netNorm = norm(filters.network);
-    list = list.filter((g) => {
-      return norm(g.red) === netNorm || norm(g.nombre).includes(netNorm);
-    });
+    list = list.filter((g) => norm(g.red) === netNorm || norm(g.nombre).includes(netNorm));
   }
 
   if (filters.freeText) {
@@ -199,11 +162,6 @@ export function filterGasolineras(question: string): Gasolinera[] {
     list = list.filter((g) => norm(`${g.nombre} ${g.instrucciones}`).includes(ft));
   }
 
-  // Normalización final para blindar status en el resto del flujo
-  return list.map((g) => ({
-    ...g,
-    status: norm(g.status) as "ok" | "condicionado",
-  }));
+  return list.map((g) => ({ ...g, status: norm(g.status) as "ok" | "condicionado" }));
 }
-
 

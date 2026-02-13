@@ -1,5 +1,5 @@
-// src/rag/manualIndex.ts
-import { DATA } from "../../packages/data/manualV16";
+// worker/src/rag/manualIndex.ts
+import { DATA } from "../../../../packages/data/manualV16";
 
 export type Hit = {
   moduloId: string;
@@ -34,10 +34,49 @@ function normalize(s: string): string {
     .trim();
 }
 
+// Stopwords ES (reduce “recall falso” por palabras vacías)
+const STOP_ES = new Set<string>([
+  "a","al","algo","alguna","algunas","alguno","algunos",
+  "ante","antes","asi","aun","aunque",
+  "bajo","bien",
+  "cada","casi","como","con","contra","cual","cuales","cuando",
+  "de","del","desde","donde","dos","durante",
+  "e","el","ella","ellas","ello","ellos","en","entre","era","eres","es","esa","esas","ese","eso","esos","esta","estaba","estamos","estan","estar","estas","este","esto","estos",
+  "fue",
+  "ha","hace","haces","hacer","han","hasta","hay","he",
+  "i","incluso",
+  "la","las","le","les","lo","los",
+  "mas","me","mi","mis","mientras","muy",
+  "no","nos","nuestra","nuestro",
+  "o","os",
+  "para","pero","poco","por","porque","puede","puedo",
+  "que","quien","quienes",
+  "se","sea","segun","si","sin","sobre","sois","son","soy","su","sus",
+  "te","tengo","tiene","tienen","toda","todas","todo","todos","tu","tus",
+  "un","una","uno","unos","unas","y","ya",
+]);
+
+function isMostlyLatin(normText: string): boolean {
+  // Si hay árabe, no es latino
+  const hasArabic = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/.test(normText);
+  if (hasArabic) return false;
+  // Si hay caracteres latinos, lo tratamos como latino
+  const hasLatin = /[a-z]/.test(normText);
+  return hasLatin;
+}
+
 function tokenize(s: string): string[] {
   const n = normalize(s);
   if (!n) return [];
-  return n.split(" ").filter((t) => t.length >= 2);
+
+  const toks = n.split(" ").filter((t) => t.length >= 2);
+
+  // Solo aplicamos stopwords cuando el texto parece ES/latino.
+  if (isMostlyLatin(n)) {
+    return toks.filter((t) => !STOP_ES.has(t));
+  }
+
+  return toks;
 }
 
 function expandQueryTokens(tokens: string[]): string[] {
@@ -58,12 +97,11 @@ function expandQueryTokens(tokens: string[]): string[] {
   // Documentación
   if (out.has("documentos") || out.has("documentacion")) add("cmr", "hoja", "tarjeta", "dni", "cap");
 
-  // UK / Border (si existe en tu contenido)
+  // UK / Border
   if (out.has("uk") || out.has("reino") || out.has("unido") || out.has("border"))
     add("calais", "eurotunel", "checklist", "food", "defense");
 
   // === MULTAS / SANCIONES (CRÍTICO) ===
-  // Variantes verbales/flexiones frecuentes -> canónico
   if (
     out.has("multado") ||
     out.has("multada") ||
@@ -87,7 +125,6 @@ function expandQueryTokens(tokens: string[]): string[] {
   if (out.has("inmovilizacion"))
     add("multa", "multas", "sancion", "sanciones", "operador", "trafico", "pago");
 
-  // pago
   if (out.has("pagar") || out.has("pago"))
     add("multa", "multas", "sancion", "sanciones", "gestion", "empresa", "colaboradora");
 
@@ -125,6 +162,7 @@ function scoreRow(row: IndexRow, qTokens: string[], qNorm: string): number {
 
   for (const tok of qTokens) if (row.haystack.includes(tok)) score += 2;
   for (const tok of qTokens) if (row.titleStack.includes(tok)) score += 6;
+
   if (qNorm && row.haystack.includes(qNorm)) score += 8;
 
   const hasConduc = qTokens.includes("conducir") || qTokens.includes("conduccion");
@@ -158,7 +196,6 @@ const INDEX: IndexRow[] = (() => {
     for (const s of m.secciones) {
       const texto = (s.p ?? []).join("\n");
       const built = buildHaystack(m.titulo, s.t, texto);
-
       rows.push({
         moduloId: String(m.id),
         moduloTitulo: m.titulo,
@@ -179,7 +216,6 @@ function restrictRows(rows: IndexRow[], opts?: SearchOpts): IndexRow[] {
     .filter(Boolean);
 
   if (inc.length === 0) return rows;
-
   return rows.filter((r) => inc.every((frag) => r.sectionKey.includes(frag)));
 }
 
@@ -188,7 +224,9 @@ export function searchManual(question: string, k = 6, opts?: SearchOpts): Hit[] 
 
   const qTokensBase = tokenize(question);
   const qTokens =
-    (opts?.mode ?? "expanded") === "expanded" ? expandQueryTokens(qTokensBase) : qTokensBase;
+    (opts?.mode ?? "expanded") === "expanded"
+      ? expandQueryTokens(qTokensBase)
+      : qTokensBase;
 
   const candidateRows = restrictRows(INDEX, opts);
 
@@ -215,6 +253,5 @@ export function searchManual(question: string, k = 6, opts?: SearchOpts): Hit[] 
 
   return out;
 }
-
 
 
