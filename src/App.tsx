@@ -1,5 +1,5 @@
 // ==============================
-// FILE: src/App.tsx (GOLDEN BASELINE V17 - CLEAN + IA Q&A via WORKER API)
+// FILE: src/App.tsx (GOLDEN BASELINE V18 - SMART REFS + CLEAN UI)
 // ==============================
 import { useCallback, useMemo, useRef, useState } from "react";
 
@@ -158,39 +158,41 @@ export default function App() {
     return answerContainsRefsBlock(qa?.answer ?? "");
   }, [qa?.answer]);
 
-  // --- REFERENCIAS (presentación limpia, sin JSON crudo, sin score en UI) ---
+  // --- REFERENCIAS (OPTIMIZADO V18: Metadata Priority) ---
   const formattedRefs = useMemo(() => {
     if (!Array.isArray(hits)) return [];
 
     const norm = hits
       .map((h: any) => {
-        const moduloId = String(h?.moduloId ?? "").trim();
-        const moduloTitulo = String(h?.moduloTitulo ?? "").trim();
-        const seccionTitulo = String(h?.seccionTitulo ?? "").trim();
+        // 1. Extracción Jerárquica de Título
+        // Prioridad: Metadata del Worker > Título Legacy > ID Crudo
+        const tituloLimpio = String(h?.metadata?.title || h?.moduloTitulo || h?.title || "").trim();
+        const seccion = String(h?.seccionTitulo || "").trim();
+        const idFallback = String(h?.id || h?.ref || "Ref");
 
-        // score SOLO para ordenar (no se muestra)
+        // 2. Score (solo para ordenar internamente)
         const score =
           typeof h?.score === "number"
             ? h.score
             : typeof h?.score === "string"
             ? Number(h.score)
-            : undefined;
+            : 0;
 
-        const fallback =
-          typeof h === "string"
-            ? h
-            : h?.t || h?.title || h?.ref || h?.id
-            ? String(h?.t ?? h?.title ?? h?.ref ?? h?.id)
-            : "";
+        // 3. Construcción de Etiqueta Profesional
+        let label = tituloLimpio;
+        
+        // Si no hay título limpio, usamos el ID, pero formateado si es posible
+        if (!label) {
+            label = idFallback;
+        }
 
-        const label =
-          moduloId || moduloTitulo || seccionTitulo
-            ? `${moduloId ? `Módulo ${moduloId}` : "Módulo"}${moduloTitulo ? `: ${moduloTitulo}` : ""}${
-                seccionTitulo ? ` — ${seccionTitulo}` : ""
-              }`
-            : fallback || "";
+        // Añadir sección si existe y no es redundante
+        if (seccion && !label.includes(seccion)) {
+            label += ` — ${seccion}`;
+        }
 
-        const key = `${moduloId}__${seccionTitulo}__${moduloTitulo}`.toLowerCase();
+        // 4. Clave única robusta
+        const key = `${label}__${idFallback}`.toLowerCase();
 
         return { key, label, score };
       })
@@ -209,7 +211,7 @@ export default function App() {
     deduped.sort((a, b) => (b.score ?? -Infinity) - (a.score ?? -Infinity));
 
     // Limitar para UX
-    return deduped.slice(0, 6);
+    return deduped.slice(0, 5);
   }, [hits]);
 
   return (

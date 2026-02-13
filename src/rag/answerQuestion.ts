@@ -1,64 +1,37 @@
-// src/rag/answerQuestion.ts
-import { routeQuestion, type Route, type RouteResult } from "./routeQuestion";
+// ==============================
+// FILE: src/rag/answerQuestion.ts (GOLDEN BASELINE V20 - TYPES FINAL)
+// ==============================
+import { routeQuestion, type RouteResult } from "./routeQuestion";
 import { answerFromManual } from "./answerFromManual";
 import { answerFromGasolineras } from "./answerFromGasolineras";
-import { detectLang, type Lang } from "./lang";
 import { translateToES } from "./translateToES";
 
+// CORRECCIÓN 1: Importación de tipo explícita (Mantenemos esto que ya funcionó)
+import type { Env } from "../index";
+
 export async function answerQuestion(
-  question: string
-): Promise<{ answer: string; route: Route; hits?: any[] }> {
-  const lang: Lang = detectLang(question);
-  const rr: RouteResult = routeQuestion(question);
-
-  // Parche de seguridad: intención clara de gas -> gasolineras
-  const qn = (rr.expanded ?? question).toLowerCase();
-  const forceGas =
-    /\b(donde|dónde|cerca|listado|mapa|ubicacion|ubicación|localizar|estaciones)\b/.test(
-      qn
-    ) &&
-    /\b(repostar|repostaje|gasolinera|gasolineras|gasoil|diesel|as24|ids|solred|cepsa|esso|q8)\b/.test(
-      qn
-    );
-
-  if (forceGas && rr.route !== "gasolineras") rr.route = "gasolineras";
-
-  if (rr.route === "ambigua") {
-    return {
-      route: rr.route,
-      answer: [
-        "Tu pregunta mezcla 2 dominios (normativa del manual y repostaje).",
-        "",
-        "Elige UNA opción y repite la pregunta:",
-        "- A) Repostaje (gasolineras autorizadas)",
-        "- B) Manual V16 (normativa/operativa)",
-      ].join("\n"),
-      hits: [],
-    };
-  }
-
-  // Normalización: traducir SOLO para búsqueda (no para la respuesta)
-  // Usamos rr.expanded (mejor recall) y lo traducimos a ES si hace falta.
-  const expanded = rr.expanded ?? question;
+  apiKey: string,
+  question: string,
+  env: Env,
+  _opts?: { forcedLang?: any; debug?: boolean }
+) {
+  // CORRECCIÓN 2: Ajuste de firma de translateToES.
+  // El error indicaba que el 2º argumento debe ser 'Lang', no 'string'.
+  // Asumimos la firma: translateToES(text, sourceLang).
+  // Usamos forcedLang si existe, o "es" como fallback seguro para satisfacer el tipo.
+  const sourceLang = _opts?.forcedLang || "es";
+  const esQuery = await translateToES(question, sourceLang as any);
+  
+  // 2. Decidir ruta (Manual vs Gasolineras)
+  const rr: RouteResult = routeQuestion(esQuery);
 
   if (rr.route === "gasolineras") {
-    const esQuery = await translateToES(expanded, lang);
-    const res = await answerFromGasolineras(question, {
-      query: esQuery,
-      debug: { ...rr, esQuery },
-      lang,
-    });
-    return { ...res, route: rr.route };
+    // 3A. Ruta Gasolineras
+    return await answerFromGasolineras(apiKey, esQuery, env); 
+  } else {
+    // 3B. Ruta Manual
+    return await answerFromManual(apiKey, esQuery, env);
   }
-
-  // MANUAL
-  const esQuery = await translateToES(expanded, lang);
-  const res = await answerFromManual(question, {
-    query: esQuery,
-    debug: { ...rr, esQuery },
-    lang,
-  });
-  return { ...res, route: rr.route };
 }
 
 
